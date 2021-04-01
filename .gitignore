@@ -1,0 +1,46 @@
+# temporary files and folders
+*.DS_Store
+*.swp
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+*~
+*.bib.bak
+**/.ipynb_checkpoints
+TAGS
+
+# automatic documentation
+docs/build/
+!docs/src/**/*.png
+!docs/src/**/*.svg
+docs/src/notebooks/**
+!docs/src/notebooks/*.md
+
+# dependencies
+
+# data files
+*.vtk
+*.dat
+*.vtu
+*.pvtu
+*.nc
+*.jld2
+
+# figures, pictures and videos
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.gif
+*.mp4
+
+# Julia system images
+*.so
+
+# development files
+!.dev/burndowngraph.svg
+.dev/tempdata.csv
+
+
+# ported material models are private
+src/InitialConditions/**
