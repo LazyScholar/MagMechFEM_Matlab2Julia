@@ -8,11 +8,14 @@ I got the permission to create a Julia port with the exceptions of some parts of
 
 ## Publications
 
-The code is build upon or with the following publications which should be cited if you use or build upon this code:
+The code is build upon or with the following primary publications which should be cited if you use or build upon this code:
 
-## Licence
+The overview of further sources can be accessed at:
 
+## License
 
+The main parts of this ported code are licensed under ...
+For further information see the `LICENSE.md` files within the module directories.
 
 ## Motivation
 
@@ -26,32 +29,32 @@ The main motivations for this project are:
 I decided to do this project after looking into Julia and it's possibilities.
 I searched for a ecosystem similar to Matlab where the prototyping could be done easily.
 The main selling points of Matlab i.m.o. are the integrated plotting, the high level functions and the IDE functionality allowing the exploration of the variables.
-Julia does provide all that except of the IDE functionality. But it is free and it claims to be faster than Matlab or Python (according to their information).
+Julia does provide all that except for the IDE functionality. But it is free and it claims to be faster than Matlab or Python (according to their information).
 
-## Roadmap
+## Road map
 
-The planed roadmap for this project is:
+The planed road map for this project is:
 
 - [ ] find a suitable licence (Apache 2.0 or MIT)
   - [Which License Should I Use? MIT vs. Apache vs. GPL](https://exygy.com/blog/which-license-should-i-use-mit-vs-apache-vs-gpl/)
   - [Apache license 2.0, MIT license or BSD license](https://snyk.io/blog/mit-apache-bsd-fairest-of-them-all/)
   - [TLDR Apache License 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0))
   - [TLDR MIT License](https://tldrlegal.com/license/mit-license)
-  - [ ] add LICENSE.md file and if necessary ad license headers to each file or at least each module
-  - [ ] add a NOTICE.md file for the license notes for the used third party code or add that to the LICENSE.md file
-- [ ] ad a CONTRIBUTING.md file in order to establish contributing rules and the terms of contributing
+  - [ ] add `LICENSE.md` file and if necessary ad license headers to each file or at least each module
+  - [ ] add a `NOTICE.md` file for the license notes for the used third party code or add that to the `LICENSE.md` file
+- [ ] ad a `CONTRIBUTING.md` file in order to establish contributing rules and the terms of contributing
 - [ ] research Julia coding styles and workflows
-  - add those to CONTRIBUTING.md
+  - add those to `CONTRIBUTING.md`
 - [ ] port the code file by file
   - do only the port do not use any Julia specific language features and do no premature optimization
   - while porting the code try to set up as many unit tests while comparing the results to the Matlab version (the unit tests will be handy later on)
-  - for now use no specific data types (use `Int` and `typeof(1.0)`)
+  - for now use no specific data types (use `<:Integer` and `<:AbstractFloat`)
   - try to add a extensive function description to each ported function and its arguments
-  - keep track on any special licences of third party code and keep track of the corrsponding publications
+  - keep track on any special licences of third party code and keep track of the corresponding publications
   - add publications which should be cited if using this code base
 - [ ] after porting make some performance examinations and use Julia specific language features to improve the performance with minor modifications
 - [ ] make some final performance studies in order to come to a conclusion if any language might be better for this case
-- [ ] add a CHANGELOG.md file at the end to keep track of further changes after the porting has been done
+- [ ] add a `CHANGELOG.md` file at the end to keep track of further changes after the porting has been done
 
 This are the points i want to accomplish on this specific project.
 

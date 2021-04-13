@@ -13,7 +13,11 @@ set datafile separator ','
 stats DATA nooutput
 Ncolumns = STATS_columns
 
-set style line 100 linetype 0 linecolor rgb "grey" linewidth 0.5
+set style line 100 linetype 4 linecolor rgb "grey" linewidth 0.5
+set style line 101 linecolor rgb "#808080" linetype 1 linewidth 1
+
+set border front linestyle 101
+set key textcolor rgb "#808080"
 
 set xdata time
 set timefmt "%Y-%m-%d"
@@ -35,21 +39,21 @@ set bmargin 3
 
 set multiplot layout 2,1
 
-set ylabel "number of files"
-set y2label "hours used"
+set ylabel "number of files" textcolor "#808080"
+set y2label "hours used" textcolor "#808080"
 
-plot DATA using 1:6 with lines linewidth 1.5 linecolor rgb "dark-grey" title "time used" axis x1y2, \
-       '' using 1:10:(86400) with boxes fill solid border -1 linecolor rgb "black" fc rgb "#ddaa55" title "completed files" axis x1y1, \
-       '' using 1:($5-$10) with linespoints pointtype 7 pointsize 0.8 linewidth 2 linecolor rgb "#2255bb" title "remaining lines" axis x1y1
+plot DATA using 1:6 with lines linewidth 0.75 linecolor rgb "#808080" title "time used" axis x1y2, \
+       '' using 1:10:(86400) with boxes fill solid border linecolor rgb "#808080" linewidth 0.5 fc rgb "#ddaa55" title "completed files" axis x1y1, \
+       '' using 1:($5-$10) with linespoints pointtype 7 pointsize 0.6 linewidth 1.4 linecolor rgb "#2255bb" title "remaining lines" axis x1y1
 
-set ylabel "lines of code"
+set ylabel "lines of code" textcolor "#808080"
 set format y "%2.0t×10^{%L}"
 unset y2label
 unset y2tics
-set xlabel "iteration timeline"
+set xlabel "iteration timeline" textcolor "#808080"
 
-plot DATA using 1:9:(86400) with boxes fill solid border -1 linecolor rgb "black" fc rgb "#ddaa55" title "completed lines" axis x1y1, \
-       '' using 1:($4-$9) with linespoints pointtype 7 pointsize 0.8 linewidth 2 linecolor rgb "#2255bb" title "remaining lines" axis x1y1
+plot DATA using 1:9:(86400) with boxes fill solid border linecolor rgb "#808080" linewidth 0.5 fc rgb "#ddaa55" title "completed lines" axis x1y1, \
+       '' using 1:($4-$9) with linespoints pointtype 7 pointsize 0.6 linewidth 1.4 linecolor rgb "#2255bb" title "remaining lines" axis x1y1
 
 unset multiplot
 
@@ -59,3 +63,4 @@ unset multiplot
 #       '' using 1:6 with lines title columnhead axis x1y2
 #plot for [i=2:Ncolumns] DATA using 1:i with lines title columnhead
 #plot for [i=1:Ncolumns] DATA using 0:i smooth csplines with lines title "columns ".i
+#set terminal svg background '#00222222'

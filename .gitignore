@@ -9,15 +9,6 @@
 **/.ipynb_checkpoints
 TAGS
 
-# automatic documentation
-docs/build/
-!docs/src/**/*.png
-!docs/src/**/*.svg
-docs/src/notebooks/**
-!docs/src/notebooks/*.md
-
-# dependencies
-
 # data files
 *.vtk
 *.dat
@@ -34,13 +25,22 @@ docs/src/notebooks/**
 *.gif
 *.mp4
 
+# automatic documentation
+docs/build/
+!docs/src/**/*.png
+!docs/src/**/*.svg
+docs/src/notebooks/**
+
+# do not use notebooks in git!
+# convert them to weave format for version control
+*.ipynb
+
 # Julia system images
 *.so
 
 # development files
-!.dev/burndowngraph.svg
+!.dev/BurnDownGraph.svg
 .dev/tempdata.csv
-
 
 # ported material models are private
 src/InitialConditions/**
