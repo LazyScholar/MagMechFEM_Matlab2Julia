@@ -14,8 +14,8 @@ The overview of further sources can be accessed at:
 
 ## License
 
-The main parts of this ported code are licensed under ...
-For further information see the `LICENSE.md` files within the module directories.
+The main parts of this ported code are licensed under ... [TODO]
+For further information see the `LICENSE` files within the module directories.
 
 ## Motivation
 
@@ -40,8 +40,8 @@ The planed road map for this project is:
   - [Apache license 2.0, MIT license or BSD license](https://snyk.io/blog/mit-apache-bsd-fairest-of-them-all/)
   - [TLDR Apache License 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0))
   - [TLDR MIT License](https://tldrlegal.com/license/mit-license)
-  - [ ] add `LICENSE.md` file and if necessary ad license headers to each file or at least each module
-  - [ ] add a `NOTICE.md` file for the license notes for the used third party code or add that to the `LICENSE.md` file
+  - [ ] add `LICENSE` file and if necessary ad license headers to each file or at least each module
+  - [ ] add a `NOTICE.md` file for the license notes for the used third party code or add that to the `LICENSE` file
 - [ ] ad a `CONTRIBUTING.md` file in order to establish contributing rules and the terms of contributing
 - [ ] research Julia coding styles and workflows
   - add those to `CONTRIBUTING.md`

@@ -1,18 +1,18 @@
-# Copyright (c) 2021 J.A. Duffek
-# Copyright (c) 2000 D.M. Spink
+#    Copyright (c) 2021 J.A. Duffek
+#    Copyright (c) 2000 D.M. Spink
 #
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 2 of the License, or
+#    (at your option) any later version.
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, see <http://www.gnu.org/licenses/>.
+#    You should have received a copy of the GNU General Public License
+#    along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 using DocStringExtensions;
 
@@ -35,9 +35,24 @@ $(EXPORTS)
 module NURBStoolbox
 
 # functions/methods
+export findspan;
+include("findspan.jl");
+export basisfun;
+include("basisfun.jl");
+export bspeval;
+include("bspeval.jl");
 export NURBS, NURBS1D, NURBS2D, nrbmak;
 include("nrbmak.jl");
+export nrbeval;
+include("nrbeval.jl");
+# rework this to use recipies or find a robust solution that works for 3D
+export nrbplot;
+include("nrbplot.jl");
 
-# demo functions/methods
+# demo/test functions/methods
+export nrbtestcrv;
+include("nrbtestcrv.jl");
+export nrbtestsrf;
+include("nrbtestsrf.jl");
 
-end # module
+end # NURBStoolbox

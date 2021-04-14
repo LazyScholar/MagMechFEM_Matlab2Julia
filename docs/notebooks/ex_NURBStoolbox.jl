@@ -3,7 +3,9 @@
 
 using Revise;
 push!(LOAD_PATH, "../../src/IGA/nurbs_toolbox/");
+#include("../../src/IGA/nurbs_toolbox/NURBStoolbox.jl")
 using NURBStoolbox;
+using Plots;
 
 #' 
 #' # NURBS Toolbox
@@ -17,7 +19,7 @@ using NURBStoolbox;
 #' 
 #' This section demonstrates how to construct NURBS data types. And how to identify them.
 #' 
-#' To build NURBS structures it is advised to use the function `nrbmak` which will accept inputs for surfaces or curves.
+#' To build NURBS structures it is advised to use the function `nrbmak()` which will accept inputs for surfaces or curves.
 #' 
 #+ 
 
@@ -42,48 +44,140 @@ plane.coefs
 #' 
 #+ 
 
-typeof(line)
-
-
-#+ 
-
-typeof(plane)
+println( typeof(line ) )
+println( typeof(plane) )
 
 #' 
 #' The abstract super type `NURBS` can be used to check for the superset of NURBS.
 #' 
 #+ 
 
-typeof(line)<:NURBS
-
-
-#+ 
-
-typeof(plane)<:NURBS
+println( typeof(line )<:NURBS )
+println( typeof(plane)<:NURBS )
 
 #' 
 #' The types `NURBS1D` and `NURBS2D` can be used to check for NURBS curves or surfaces.
 #' 
 #+ 
 
-typeof(line)<:NURBS1D
+println( typeof(line )<:NURBS1D )
+println( typeof(plane)<:NURBS1D )
+println( typeof(line )<:NURBS2D )
+println( typeof(plane)<:NURBS2D )
 
-
+#' 
+#' ## NURBS Curves
+#' 
+#' As mentioned creates this toolbox NURBS curves with `nrbmak()`.
+#' This function uses a point matrix (each column a point and each row a coordinate)
+#' 
 #+ 
 
-typeof(plane)<:NURBS1D
+pnts = [0.5 1.5 4.5 3.0 7.5 6.0 8.5;
+        3.0 5.5 5.5 1.5 1.5 4.0 4.5;
+        0.0 0.0 0.0 0.0 0.0 0.0 0.0];
 
-
+#' 
+#' and a corresponding knot open knot vector
+#' 
 #+ 
 
-typeof(line)<:NURBS2D
+knots = vec([0 0 0 1/4 1/2 3/4 3/4 1 1 1]);
 
-
+#' 
+#' as input arguments.
+#' 
 #+ 
 
-typeof(plane)<:NURBS2D
+crv = nrbmak(pnts,knots);
 
+#' 
+#' Note that this toolbox does works with open NURBS curves!
+#' 
+#' This curve can also build by using the testfunction `nrbtestcrv()`.
+#' To evaluate the curve the function `nrbeval()` can be used.
+#' 
+#+ 
 
+p1 = nrbeval(crv,collect(range(0,1,length=101)),:cartesian)
+
+#' 
+#' The results can be used for plotting or for further evaluation.
+#' 
+#+ 
+
+plot(p1[1,:],p1[2,:],
+    background_color=:transparent,
+    foreground_color=:grey,
+    border=:box,
+    label="crv",
+    aspect_ratio=:equal,
+    linewidth=2)
+plot!(crv.coefs[1,:],crv.coefs[2,:],
+      background_color=:transparent,
+      foreground_color=:grey,
+      linestyle=:dash,
+      markershape =:circle,
+      markerstrokewidth = 0.5,
+      border=:box,
+      label="crv.coefs",
+      aspect_ratio=:equal)
+
+#' 
+#' ## Surfaces
+#' 
+#' The creation of NURBS surfaces is done similarly to the curves.
+#' The input for `nrbmak` with the difference that the points are defined with a 3D Array.
+#' The first and second dimension are used equally to the curve for U-direction and the third dimension stores the points in V direction.
+#' 
+#' Since the process is simillar we use a shortcut for creating the data structure.
+#' 
+#+ 
+
+srf = nrbtestsrf()
+
+#' 
+#' The evaluation of the surface can also be done with `nrbeval()`.
+#' 
+#+ 
+
+p2 = nrbeval(srf,[collect(range(0,1,length=50)),collect(range(0,1,length=50))]);
+
+#' 
+#' The plotting of that data can be done with one of the many plotting ecosystems.
+#' 
+#+ 
+
+Plots.pyplot();
+plot(p2[1,:,:],p2[2,:,:],p2[3,:,:],c = :jet,
+    st=:surface,
+    background_color=:transparent,
+    foreground_color=:grey,
+    legend = nothing,
+    camera=[-30,30],
+    border=:box,
+    html_output_format=:svg)
+plot!(srf.coefs[1,:,:],srf.coefs[2,:,:],srf.coefs[3,:,:],
+      linewidth=0.5,
+      st=:wireframe)
+
+#' 
+#' The toolbox does also provides a plot wrapper `nrbplot()` for the ease of use.
+#' 
+#+ 
+
+nrbplot(srf,[10;10],
+        c=:winter,
+        background_color=:transparent,
+        foreground_color=:grey,
+        legend = nothing,
+        linewidth=0.5,
+        html_output_format=:svg,
+        linecolor = :black)
+
+#' 
+#' Note that this wrapper `nrbplot()` uses the `Plots.pyplot()` backend for 3D plots which limits the functionality to that eco system.
+#' 
 #+ 
 
 

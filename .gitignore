@@ -6,6 +6,7 @@
 *.jl.mem
 *~
 *.bib.bak
+*.bib.sav
 *.bib.sav.bak
 **/.ipynb_checkpoints
 TAGS

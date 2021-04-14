@@ -43,7 +43,7 @@ set ylabel "number of files" textcolor "#808080"
 set y2label "hours used" textcolor "#808080"
 
 plot DATA using 1:6 with lines linewidth 0.75 linecolor rgb "#808080" title "time used" axis x1y2, \
-       '' using 1:10:(86400) with boxes fill solid border linecolor rgb "#808080" linewidth 0.5 fc rgb "#ddaa55" title "completed files" axis x1y1, \
+       '' using 1:10:(86400) with boxes fill solid border linecolor rgb "#808080" linewidth 0.3 fc rgb "#ddaa55" title "completed files" axis x1y1, \
        '' using 1:($5-$10) with linespoints pointtype 7 pointsize 0.6 linewidth 1.4 linecolor rgb "#2255bb" title "remaining lines" axis x1y1
 
 set ylabel "lines of code" textcolor "#808080"
@@ -52,7 +52,7 @@ unset y2label
 unset y2tics
 set xlabel "iteration timeline" textcolor "#808080"
 
-plot DATA using 1:9:(86400) with boxes fill solid border linecolor rgb "#808080" linewidth 0.5 fc rgb "#ddaa55" title "completed lines" axis x1y1, \
+plot DATA using 1:9:(86400) with boxes fill solid border linecolor rgb "#808080" linewidth 0.3 fc rgb "#ddaa55" title "completed lines" axis x1y1, \
        '' using 1:($4-$9) with linespoints pointtype 7 pointsize 0.6 linewidth 1.4 linecolor rgb "#2255bb" title "remaining lines" axis x1y1
 
 unset multiplot

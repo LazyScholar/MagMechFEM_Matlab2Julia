@@ -1,5 +1,18 @@
-# Copyright (c) 2021 J.A. Duffek
-# Copyright (c) 2000 D.M. Spink
+#    Copyright (c) 2021 J.A. Duffek
+#    Copyright (c) 2000 D.M. Spink
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 # TODO: i could use StaticArrays.jl for a more fixed type definition
 using DocStringExtensions;
@@ -35,7 +48,7 @@ own structure, in fact a few functions in the toolbox do this for convenience.
   V in a vector of vectors [uknots; vknots]
 
 # Output:
-- `nurbs` NURBS data structure see [`NURBS1D`](@ref) and [`NURBS2D`](@ref).
+- `nurbs`: NURBS data structure see [`NURBS1D`](@ref) and [`NURBS2D`](@ref).
 
 !!! info "Note:"
     The control points are always converted and stored within the NURBS
@@ -49,7 +62,7 @@ of order 2 is required. Note that the knot sequence has a multiplicity of 2 at
 the start (0.0,0.0) and end (1.0 1.0) in order to clamp the ends.
 
 ```julia
-line = nrbmak([0.0 1.5; 0.0 3.0],vec([0.0 0.0 1.0 1.0]))
+julia> line = nrbmak([0.0 1.5; 0.0 3.0],vec([0.0 0.0 1.0 1.0]))
 ```
 
 Construct a surface in the x-y plane i.e
@@ -66,9 +79,9 @@ Construct a surface in the x-y plane i.e
                                       U
 
 ```julia
-coefs = cat([0.0 0.0; 0.0 1.0],[1.0 1.0; 0.0 1.0],dims=3);
-knots = [vec([0.0 0.0 1.0 1.]),vec([0.0 0.0 1.0 1.0])];
-plane = nrbmak(coefs,knots)
+julia> coefs = cat([0.0 0.0; 0.0 1.0],[1.0 1.0; 0.0 1.0],dims=3);
+julia> knots = [vec([0.0 0.0 1.0 1.]),vec([0.0 0.0 1.0 1.0])];
+julia> plane = nrbmak(coefs,knots)
 ```
 
 # Reference:
@@ -88,7 +101,7 @@ dim = np[1];
 if typeof(knots)<:Vector{Vector{F}}
   if !(typeof(coefs)<:Array{F,3})
     throw(ArgumentError("coefs for surface has to be a Array{F,3}!"));
-  end
+  end # if
   # constructing a surface
   number = [np[2];np[3]];
   if dim < 4
@@ -110,7 +123,7 @@ if typeof(knots)<:Vector{Vector{F}}
 else
   if !(typeof(coefs)<:Matrix{F})
     throw(ArgumentError("coefs for curve has to be a Matrix{F}!"));
-  end
+  end # if
   # constructing a cruve
   number = np[2];
   if dim < 4
@@ -119,7 +132,7 @@ else
     ncoefs[1:dim,:] = coefs;
   else
     ncoefs = coefs;
-  end
+  end # if
   norder = length(knots) - np[2];
   nknots = sort(knots);
   nknots = (nknots .- knots[1]) ./ (knots[end] - knots[1]);

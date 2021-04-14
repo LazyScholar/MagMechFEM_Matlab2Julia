@@ -26,7 +26,19 @@ NURBS2D
 ## Functions/Methods
 
 ```@docs
+findspan
+basisfun
+bspeval
 nrbmak
+nrbeval
+nrbplot
+```
+
+## Test/Demo Functions/Methods
+
+```@docs
+nrbtestcrv
+nrbtestsrf
 ```
 
 ## Index

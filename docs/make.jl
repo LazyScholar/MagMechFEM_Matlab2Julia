@@ -34,6 +34,7 @@ for f in replace.(filterdir(".jl","./notebooks/"),".jl"=>"")
     if stat("$file.jl").mtime < stat("$file.ipynb").mtime
       @info "updating $f.jl from notebook file"
       convert_doc("$file.ipynb","$file.jl");
+      touch("$file.ipynb");
       continue
     elseif stat("$file.jl").mtime == stat("$file.ipynb").mtime
       @info "$f.jl and $f.ipynb up to date"
@@ -60,7 +61,7 @@ htmlwriter = Documenter.HTML(
               assets = [asset("assets/logo.ico",class=:ico,islocal=true)]);
 
 pages = ["Home"           => "index.md",
-         "NURBS Toolbox"  => "NURBStoolbox.md",
+         "Packages" => [ "NURBS Toolbox" => "NURBStoolbox.md", ],
          "API"      => [ "NURBS Toolbox" => "api_NURBStoolbox.md", ],
          "Examples" => [ "NURBS Toolbox" => "notebooks/ex_NURBStoolbox.md", ],
          "References"     => "references.md",
