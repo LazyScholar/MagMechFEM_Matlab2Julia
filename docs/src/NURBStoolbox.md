@@ -1,16 +1,20 @@
 # NURBS Toolbox
 
-## License
+## Licence
 
-This toolbox is licensed under the GPLv2 license as stated in the `LICENSE.md` file in its corresponding directory.
+This toolbox is licensed under the GPLv2 licence as stated in the `LICENSE` file in its corresponding directory.
 
 ## Overview
 
-This toolbox has been ported from Matlab to Julia as part of a bigger porting project.
+This toolbox has been ported from Matlab to Julia as part of a bigger language porting project.
+Unfortunately the used files did not contain a file clearly indicating the licence.
+Therefore, the licence was set to GPLv2 assuming the roots and its original licence.
 
-The original description charactericing this toolbox has been published on the website of M. Spink[^1]. Here an excerpt of that site.
+This package was originally written in 2000 by D.M. Spink for Matlab and Scilab[^1]. And initially hosted on the MathWorks servers.
+It was reuploaded by a third party[^2] this state of the packages is used in this port (Version 1.0 by [2000Spink](@cite)).
+The seemingly original successor of the toolbox is the Octace community package nurbs[^3] which is actively maintained.
 
-[^1]: Spink, M. (2016, Jan. 10) NURBS Toolbox. ARIA. `http://aria.uklinux.net/nurbs.php3` accessible via [WayBackMachine](https://web.archive.org/web/20160110131409/aria.uklinux.net/nurbs.php3)
+The original description characterizing this toolbox has been published on the website of M. Spink[^1]. Here is an excerpt of that site.
 
 > The NURBS toolbox is collection of routines for the creation, and manipulation of Non-Uniform Rational B-Splines (NURBS). NURBS have to some extent become the de facto industry standard for representing complex geometric information in CAD, CAE and CAM, and are an integral part of many standard data exchange formats such as IGES, STEP and PHIGS.
 >
@@ -23,6 +27,10 @@ The original description charactericing this toolbox has been published on the w
 >[ ... ]
 >
 >The NURBS toolbox is provide free of any charges and has a GPL license. The source code is available for the Linux, Solaris and Windows, however should compile easily on other platforms.
+
+[^1]: Spink, M. (2016, Jan. 10) NURBS Toolbox. ARIA. `http://aria.uklinux.net/nurbs.php3` accessible via [WayBackMachine](https://web.archive.org/web/20160110131409/aria.uklinux.net/nurbs.php3)
+[^2]: Penguian (2010). NURBS Toolbox by D.M. Spink [https://www.mathworks.com/matlabcentral/fileexchange/26390-nurbs-toolbox-by-d-m-spink](https://www.mathworks.com/matlabcentral/fileexchange/26390-nurbs-toolbox-by-d-m-spink), MATLAB Central File Exchange. Retrieved April 14, 2021.
+[^3]: M. Spink, D. Claxton, C. de Falco, R. Vazquez (2021-03-09) Nurbs. Octave Forge Community packages. [https://octave.sourceforge.io/nurbs/index.html](https://octave.sourceforge.io/nurbs/index.html)
 
 ## Examples
 

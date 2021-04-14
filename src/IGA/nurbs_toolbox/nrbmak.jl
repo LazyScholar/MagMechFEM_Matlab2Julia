@@ -1,5 +1,5 @@
-# Copyright (c) 2021. J.A. Duffek
-# Copyright (c) 2000. D.M. Spink
+# Copyright (c) 2021 J.A. Duffek
+# Copyright (c) 2000 D.M. Spink
 
 # TODO: i could use StaticArrays.jl for a more fixed type definition
 using DocStringExtensions;
@@ -128,7 +128,7 @@ end # if
 end# nrbmak
 
 """
-    NURBS{<:Integer,<:AbstractFloat}
+    NURBS{I<:Integer,F<:AbstractFloat}
 
 Abstract supertype for NURBS data tayps see [`NURBS1D`](@ref) and
 [`NURBS2D`](@ref).
@@ -139,7 +139,7 @@ with the Spline Toolbox from Mathworks.
 abstract type NURBS{I<:Integer,F<:AbstractFloat} end
 
 """
-    NURBS1D{<:Integer,<:AbstractFloat} <: NURBS{I,F}
+    NURBS1D{I<:Integer,F<:AbstractFloat} <: NURBS{I,F}
 
 NURBS datatype representing a NURBS curve. Constructed with [`nrbmak`](@ref).
 
@@ -166,7 +166,7 @@ coefs::Matrix{F}
 end # NURBS1D
 
 """
-    NURBS2D{<:Integer,<:AbstractFloat} <: NURBS{I,F}
+    NURBS2D{I<:Integer,F<:AbstractFloat} <: NURBS{I,F}
 
 NURBS datatype representing a NURBS surface. Constructed with [`nrbmak`](@ref).
 
@@ -197,11 +197,11 @@ end # NURBS2D
 # pretty printing NURBS1D
 Base.show(io::IO, ::MIME"text/plain", z::NURBS1D{I,F}) where{I,F} =
   print(io, "NURBS1D{$I, $F} curve nurbs structre:\n   ", z);
-Base.show(io::IO, z::NURBS1D) = print(io,"order: ",z.order ,", ","#points: ",
-                                      z.number);
+Base.show(io::IO, z::NURBS1D) = print(io,"order: ",z.order ,", ",
+                                      "#points: ", z.number);
 
 # pretty printing NURBS2D
 Base.show(io::IO, ::MIME"text/plain", z::NURBS2D{I,F}) where{I,F} =
   print(io, "NURBS2D{$I, $F} surface nurbs structre:\n   ", z);
-Base.show(io::IO, z::NURBS2D) = print(io,"order: [",z.order[1],",",z.order[2],
-                                      "], ","#points: ", z.number);
+Base.show(io::IO, z::NURBS2D) = print(io,"order: ",z.order ,", ",
+                                      "#points: ", z.number);

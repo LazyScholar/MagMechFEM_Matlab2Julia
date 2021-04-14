@@ -6,6 +6,7 @@
 *.jl.mem
 *~
 *.bib.bak
+*.bib.sav.bak
 **/.ipynb_checkpoints
 TAGS
 
@@ -41,6 +42,9 @@ docs/src/notebooks/**
 # development files
 !.dev/BurnDownGraph.svg
 .dev/tempdata.csv
+
+# editor directories
+.vscode/**
 
 # ported material models are private
 src/InitialConditions/**
