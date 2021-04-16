@@ -88,7 +88,7 @@ if(not -f $progressfile){
 		}else{print "Could not read line: $line (line removed!) $!\n";}
 	}
 	print "current progress: done/sum\n";
-	print "total lines           :  $data_done[0]/$data_sum[0]\n";
+	print "total lines           : $data_done[0]/$data_sum[0]\n";
 	print "comments              : $data_done[1]/$data_sum[1]\n";
 	print "lines of code         : $data_done[2]/$data_sum[2]\n";
 	print "files                 : $data_done[3]/$data_sum[3]\n";

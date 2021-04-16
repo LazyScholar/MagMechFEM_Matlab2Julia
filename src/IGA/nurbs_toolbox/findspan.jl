@@ -15,7 +15,7 @@
 #    along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 """
-    findspan(n::I,p::I,u::F,U::Vector{F}) where {I<:Integer,F<:AbstractFloat}
+    findspan(n::I,p::I,u::F,U::Vector{F})::I where {I<:Integer,F<:AbstractFloat}
 
 Find the span of a B-Spline knot vector at a parametric point
 
@@ -26,7 +26,7 @@ Find the span of a B-Spline knot vector at a parametric point
 - `U`: knot sequence
 
 # Output:
-- `s::I`: knot span of `u` in `U`
+- `s`: knot span of `u` in `U`
 
 # Examples:
 ```julia
@@ -37,7 +37,7 @@ julia> s = findspan(n,p,u,U)
 - Algorithm A2.1 from 'The NURBS BOOK' pg68 ([1997Piegl](@cite))
 """
 function findspan(n::I,p::I,u::F,U::Vector{F}
-                 ) where {I<:Integer,F<:AbstractFloat}
+                 )::I where {I<:Integer,F<:AbstractFloat}
 # TODO: the original C function passes the knot vector as reference
 
 # special case

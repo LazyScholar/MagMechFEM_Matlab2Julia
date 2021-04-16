@@ -20,7 +20,7 @@ using DocStringExtensions;
 """
     nrbmak(coefs::Union{Matrix{F}, Array{F,3}},
            knots::Union{Vector{F}, Vector{Vector{F}}}
-          ) where {F<:AbstractFloat}
+          )::NURBS where {F<:AbstractFloat}
 
 Construct the NURBS structure given the control points and the knots.
 
@@ -89,11 +89,15 @@ julia> plane = nrbmak(coefs,knots)
 """
 function nrbmak(coefs::Union{Matrix{F}, Array{F,3}},
                 knots::Union{Vector{F}, Vector{Vector{F}}}
-               ) where {F<:AbstractFloat}
+               )::NURBS where {F<:AbstractFloat}
 # TODO: the matlab version does not check for open NURBS
 # TODO: the matlab version does no further knot checking it only sorts and
 #       normalizes
 # TODO: have a look if [vec1,vec2] gives always vec([vec1,vec2])
+# TODO: nrbmak does not check the m=p+1 start and end knot requirement which
+#       could lead to a infinite loop at findspan
+# TODO: nrbmak does not check for the m<=p requirement for central knots
+
 nform = "B-NURBS";
 ndim = 4;
 np = size(coefs);

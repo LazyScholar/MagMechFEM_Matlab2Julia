@@ -15,7 +15,8 @@
 #    along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 """
-    basisfun(i::I,u::F,p::I,U::Vector{F}) where {I<:Integer,F<:AbstractFloat}
+    basisfun(i::I,u::F,p::I,U::Vector{F}
+            )::Vector{F} where {I<:Integer,F<:AbstractFloat}
 
 Calculates the B-Spline basis function at `u`.
 
@@ -26,7 +27,7 @@ Calculates the B-Spline basis function at `u`.
 - `U`: knot sequence
 
 # Output:
-- `N::Vector{F}`: basis function vector of lenght `p+1`
+- `N`: basis function vector of lenght `p+1`
 
 # Examples:
 ```julia
@@ -37,7 +38,7 @@ julia> N = basisfun(i,u,p,U)
 - Algorithm A2.2 from 'The NURBS BOOK' pg70 ([1997Piegl](@cite))
 """
 function basisfun(i::I,u::F,p::I,U::Vector{F}
-                 ) where {I<:Integer,F<:AbstractFloat}
+                 )::Vector{F} where {I<:Integer,F<:AbstractFloat}
 # TODO: the original C function got U and N passed as reference
 # TODO: this function has optimization potential
 

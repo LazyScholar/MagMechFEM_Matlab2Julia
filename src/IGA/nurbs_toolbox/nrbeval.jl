@@ -52,7 +52,7 @@ julia> p = nrbeval(srf,[ut,vt])
 Evaluate the NURBS circle at twenty points from 0.0 to 1.0.
 ```julia
 julia> nrb = nrbcirc;
-julia> ut = linspace(0.0,1.0,20);
+julia> ut = range(0.0,stop=1.0,length=20)
 julia> p = nrbeval(nrb,ut)
 ```
 
@@ -62,7 +62,7 @@ julia> p = nrbeval(nrb,ut)
     `flag` is used instead.
 
 # Reference
-- see also `bspeval`
+- see also: [`bspeval`](@ref)
 """
 function nrbeval(nurbs::NURBS{I,F},
                  tt::Union{Vector{F}, Vector{Vector{F}}, Matrix{F}},

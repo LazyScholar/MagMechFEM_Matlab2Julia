@@ -34,9 +34,7 @@ $(EXPORTS)
 """
 module NURBStoolbox
 
-# functions/methods
-export findspan;
-include("findspan.jl");
+# Evaluation functions/methods
 export basisfun;
 include("basisfun.jl");
 export bspeval;
@@ -46,13 +44,71 @@ include("nrbmak.jl");
 export nrbeval;
 include("nrbeval.jl");
 # rework this to use recipies or find a robust solution that works for 3D
-export nrbplot;
+export nrbplot, nrbplot!;
 include("nrbplot.jl");
+
+# Utility and modification functions/methods
+export findspan;
+include("findspan.jl")
+export vecscale;
+include("vecscale.jl")
+export vectrans;
+include("vectrans.jl")
+export vecrotx;
+include("vecrotx.jl")
+export vecroty;
+include("vecroty.jl")
+export vecrotz;
+include("vecrotz.jl")
+export nrbtform;
+include("nrbtform.jl");
+export nrbextrude;
+include("nrbextrude.jl");
+export vecdot;
+include("vecdot.jl");
+export veccross;
+include("veccross.jl");
+export vecmag;
+include("vecmag.jl");
+export vecmag2;
+include("vecmag2.jl");
+export vecnorm_toolbox
+include("vecnorm_toolbox.jl");
+export vecangle;
+include("vecangle.jl");
+export nrbtransp;
+include("nrbtransp.jl");
+# deg2rad is a julia build in function therefore omitted
+# rad2deg is a julia build in function therefore omitted
+
+# "recipes" of NURBS structures
+export nrbline;
+include("nrbline.jl");
+export nrbrect;
+include("nrbrect.jl");
+export nrbcirc;
+include("nrbcirc.jl");
+export nrbcylind;
+include("nrbcylind.jl");
 
 # demo/test functions/methods
 export nrbtestcrv;
 include("nrbtestcrv.jl");
 export nrbtestsrf;
 include("nrbtestsrf.jl");
+export demoline;
+include("demoline.jl");
+export demorect;
+include("demorect.jl");
+export democirc;
+include("democirc.jl");
+export demoellip;
+include("demoellip.jl");
+export democurve;
+include("democurve.jl");
+export demohelix;
+include("demohelix.jl");
+export democylind;
+include("democylind.jl");
 
 end # NURBStoolbox

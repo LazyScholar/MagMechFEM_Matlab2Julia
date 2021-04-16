@@ -35,7 +35,55 @@ The original description characterizing this toolbox has been published on the w
 
 ## Examples
 
-For further examples see the [demo notebook](notebooks/ex_NURBStoolbox.md).
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demorect()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+democirc()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demoellip()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+democurve()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demohelix()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg,camera=[-45,25]) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+democylind()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg,camera=[-40,40]) # hide
+```
+
+For further examples see the [NURBS Toolbox notebook](notebooks/ex_NURBStoolbox.md).
 
 ## API
 

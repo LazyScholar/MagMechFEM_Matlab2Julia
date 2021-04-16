@@ -60,6 +60,6 @@ knots = Vector{Vector{typeof(1.0)}}(undef,2);
 knots[1] = vec([0 0 0 1/3 2/3 1 1 1]); # knots along u
 knots[2] = vec([0 0 0 1/3 2/3 1 1 1]); # knots along v
 
-# make and nurbs surface
+# make nurbs surface
 return nrbmak(pnts,knots);
 end # nrbtestsrf

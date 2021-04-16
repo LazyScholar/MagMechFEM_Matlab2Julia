@@ -16,7 +16,7 @@
 
 """
     bspeval(d::I,c::Matrix{F},k::Vector{F},u::Vector{F}
-           ) where {I<:Integer,F<:AbstractFloat}
+           )::Matrix{F} where {I<:Integer,F<:AbstractFloat}
 
 Evaluate a univariate B-Spline.
 
@@ -27,7 +27,7 @@ Evaluate a univariate B-Spline.
 - `u`: parametric evaluation points, vector of size `nu`
 
 # Output:
-- `p::Matrix{F}`: knot span of `u` in `U`
+- `p`: Evaluated points, matrix of size `(dim,nu)`
 
 # Examples:
 ```julia
@@ -38,7 +38,7 @@ julia> p = bspeval(d,c,k,u)
 - Algorithm A3.1 from 'The NURBS BOOK' pg82 ([1997Piegl](@cite))
 """
 function bspeval(d::I,c::Matrix{F},k::Vector{F},u::Vector{F}
-                ) where {I<:Integer,F<:AbstractFloat}
+                )::Matrix{F} where {I<:Integer,F<:AbstractFloat}
 # TODO: the original C function passed c, k, u and p as reference
 # TODO: this function has optimization potential
 

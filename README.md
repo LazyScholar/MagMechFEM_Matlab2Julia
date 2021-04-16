@@ -23,10 +23,10 @@ The main motivations for this project are:
 
 - I want to see if Julia is truly faster than Matlab on a something else than benchmark codes.
 - I want to deepen my overview and insight on the interconnections on a comparable small FEM code (i tried it with a ten times bigger code and failed).
-- In the process of this project i want build a tool set with Julia as i can not afford a Matlab licence after leaving my university.
-- Furthermore i want to get a feeling on how much time and effort is necessary to make a language port of a bigger code base.
+- In the process of this project i want to build a tool set with Julia as i can not afford a Matlab licence after leaving my university.
+- Furthermore, i want to get a feeling on how much time and effort is necessary to make a language port of a bigger code base.
 
-I decided to do this project after looking into Julia and it's possibilities.
+I decided to do this project after looking into Julia and its possibilities.
 I searched for a ecosystem similar to Matlab where the prototyping could be done easily.
 The main selling points of Matlab i.m.o. are the integrated plotting, the high level functions and the IDE functionality allowing the exploration of the variables.
 Julia does provide all that except for the IDE functionality. But it is free and it claims to be faster than Matlab or Python (according to their information).
@@ -62,13 +62,18 @@ This are the points i want to accomplish on this specific project.
 
 ![burn down graph](.dev/BurnDownGraph.svg "progress overview")
 
+The upper graph shows only the time used to translate the files not the debugging, testing or tinkering.
+So in order to estimate the real work time one could double or triple that used time.
+The second graph shows furthermore only the lines of code which had been translated on the respective iteration.
+As the translation also involves the translation of the documentation it is more reasonable to take the total lines ported into account (third graph).
+
 ## Outlook
 
 I might try to refactor the resulting code later on.
 Or might as well rewrite the whole FEM code in order to get a slim and efficient code while not striping off any major features.
-I doubt that i will maintain the ported code in it's final form as my final goal is a code base that is highly extensible and easy to grasp.
+I doubt that i will maintain the ported code in its final form as my final goal is a code base that is highly extensible and easy to grasp.
 Less like a research code and more like a teaching code with a good documentation as a slim base which one can learn in a short time, come back to and build upon later.
-But that is a project on it's own.
+But that is a project on its own.
 And i will not continue it here as those modifications might change the form of the code too much.
 Provided that i want to continue with that vision after this project.
 
