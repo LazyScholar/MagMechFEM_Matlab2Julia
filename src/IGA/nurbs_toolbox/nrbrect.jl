@@ -28,7 +28,8 @@ or
 Construct NURBS representation of a rectangle.
 
 Construct a rectangle or square in the x-y plane with the bottom corner at
-(0,0,0). If no rhs arguments provided the function constructs a unit square.
+(0,0,0). If there are no arguments provided the function constructs a unit
+square.
 
 # Arguments:
 - `size`: Size of the square (width = height).

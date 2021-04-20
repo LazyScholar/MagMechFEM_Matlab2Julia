@@ -17,22 +17,39 @@
 using Plots;
 
 """
-    democirc()
+    demodegelev()
 
-Demonstration of a circle arcs in the x-y plane.
+Demonstration of the degree elevation algorithm.
 
 # Examples:
 ```julia
-julia> democirc()
+julia> demodegelev()
 ```
 """
-function democirc()
-plot(title = "NURBS construction of a 2D circle and arc.",
+function demodegelev()
+crv = nrbtestcrv();
+
+# plot the control points
+plot(crv.coefs[1,:],crv.coefs[2,:],
+     title = "Degree elevation of test curve by 1.",
+     m = (7, :transparent, stroke(1, :green)),
+     lw =1.0,
+     c = :green,
+     linestyle =:dash,
      framestyle=:box,
      legend = false);
-for r in 1.0:9.0
-  crv = nrbcirc(r,[0.0;0.0;0.0],deg2rad(45),deg2rad(315));
-  nrbplot!(crv,50);
-end # for r
-current();
-end # democirc
+
+# draw nurbs curve
+nrbplot!(crv,48);
+
+# degree elevate the curve by 1
+icrv = nrbdegelev(crv, 1);
+
+# insert new knots and plot new control points
+plot!(icrv.coefs[1,:],icrv.coefs[2,:],
+      m = (7, :transparent, stroke(1, :red)),
+      lw =1.0,
+      c = :red,
+      linestyle =:dash,
+      legend = false);
+end # demodegelev

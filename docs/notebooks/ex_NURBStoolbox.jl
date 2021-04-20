@@ -5,6 +5,7 @@ using Revise; # hide
 push!(LOAD_PATH, "../../src/IGA/nurbs_toolbox/");
 using NURBStoolbox;
 using Plots;
+default(background_color=:transparent,foreground_color=:grey,html_output_format=:svg);
 
 #' 
 #' # NURBS Toolbox
@@ -107,19 +108,14 @@ p1 = nrbeval(crv,collect(range(0,1,length=101)),:cartesian)
 #+ 
 
 plot(p1[1,:],p1[2,:],
-    background_color=:transparent,
-    foreground_color=:grey,
     border=:box,
     label="crv",
     aspect_ratio=:equal,
     linewidth=2)
 plot!(crv.coefs[1,:],crv.coefs[2,:],
-      background_color=:transparent,
-      foreground_color=:grey,
       linestyle=:dash,
       markershape =:circle,
       markerstrokewidth = 0.5,
-      border=:box,
       label="crv.coefs",
       aspect_ratio=:equal)
 
@@ -141,7 +137,7 @@ srf = nrbtestsrf()
 #' 
 #+ 
 
-p2 = nrbeval(srf,[collect(range(0,1,length=50)),collect(range(0,1,length=50))]);
+p2 = nrbeval(srf,[collect(range(0,1,length=20)),collect(range(0,1,length=20))]);
 
 #' 
 #' The plotting of that data can be done with one of the many plotting ecosystems.
@@ -151,12 +147,8 @@ p2 = nrbeval(srf,[collect(range(0,1,length=50)),collect(range(0,1,length=50))]);
 Plots.pyplot();
 plot(p2[1,:,:],p2[2,:,:],p2[3,:,:],c = :jet,
      st=:surface,
-     background_color=:transparent,
-     foreground_color=:grey,
      legend = nothing,
-     camera=[-30,30],
-     border=:box,
-     html_output_format=:svg)
+     camera=[-30,30])
 plot!(srf.coefs[1,:,:],srf.coefs[2,:,:],srf.coefs[3,:,:],
       linewidth=0.5,
       st=:wireframe)
@@ -168,12 +160,9 @@ plot!(srf.coefs[1,:,:],srf.coefs[2,:,:],srf.coefs[3,:,:],
 
 nrbplot(srf,[10;10],
         c=:winter,
-        background_color=:transparent,
-        foreground_color=:grey,
         legend = nothing,
         linewidth=0.5,
         camera=[-40,60],
-        html_output_format=:svg,
         linecolor = :black)
 ϑ = collect(range(0,stop=2*pi,length=180));
 t = cat(cos.(ϑ),sin.(ϑ),dims=2) ./2 .+ 0.5
@@ -185,14 +174,6 @@ plot!(p3[1,:],p3[2,:],p3[3,:] .- 2,linewidth=2)
 #' One drawback e.g. is that the depth order/buffer is not considered between chained plot commands.
 #' That can be seen in the last plot. The curve is plotted `2` units bellow the surface.
 #' 
-#+ 
-
-
-
-#+ 
-
-
-
 #+ 
 
 

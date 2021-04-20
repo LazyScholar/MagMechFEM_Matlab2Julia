@@ -30,7 +30,7 @@ Determines scalar dot product of two vectors.
 
 # Output:
 - `dot`: Row vector of scalars, each element corresponding to the dot product
-  of the respective components in vec1 and vec2.
+  of the respective components in `vec1` and `vec2`.
 
 # Examples:
 ```julia

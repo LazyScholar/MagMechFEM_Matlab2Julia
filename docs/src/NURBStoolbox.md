@@ -83,6 +83,46 @@ democylind()
 plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg,camera=[-40,40]) # hide
 ```
 
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demotorus()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demorevolve()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demodegelev()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demodercrv()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demodersrf()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
 For further examples see the [NURBS Toolbox notebook](notebooks/ex_NURBStoolbox.md).
 
 ## API

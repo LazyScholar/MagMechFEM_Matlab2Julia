@@ -45,6 +45,7 @@ vecroty
 vecrotz
 nrbtform
 nrbextrude
+nrbrevolve
 vecdot
 veccross
 vecmag
@@ -52,6 +53,13 @@ vecmag2
 vecnorm_toolbox
 vecangle
 nrbtransp
+bspdegelev
+nrbdegelev
+bspkntins
+nrbkntins
+bspderiv
+nrbderiv
+nrbdeval
 ```
 
 
@@ -76,6 +84,19 @@ demoellip
 democurve
 demohelix
 democylind
+demotorus
+demorevolve
+demodegelev
+demokntins
+demodercrv
+demodersrf
+```
+
+## Private Functions/Methods
+
+```@docs
+bincoeff
+factln
 ```
 
 ## Index

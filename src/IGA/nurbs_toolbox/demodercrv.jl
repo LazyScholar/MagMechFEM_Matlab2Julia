@@ -17,22 +17,41 @@
 using Plots;
 
 """
-    democirc()
+    demodercrv()
 
-Demonstration of a circle arcs in the x-y plane.
+Demonstrates the construction of a general curve and determine of the
+derivative.
 
 # Examples:
 ```julia
-julia> democirc()
+julia> demodercrv()
 ```
 """
-function democirc()
-plot(title = "NURBS construction of a 2D circle and arc.",
-     framestyle=:box,
-     legend = false);
-for r in 1.0:9.0
-  crv = nrbcirc(r,[0.0;0.0;0.0],deg2rad(45),deg2rad(315));
-  nrbplot!(crv,50);
-end # for r
-current();
-end # democirc
+function demodercrv()
+# make and draw nurbs test curve
+crv = nrbtestcrv();
+nrbplot(crv,48,
+        title = "First derivatives along a test curve.",
+        lw =1.0,
+        c = :green,
+        framestyle=:box,
+        legend = false);
+
+npts = 9;
+tt = collect(range(0.0,1.0,length=npts));
+
+# first derivative
+dcrv = nrbderiv(crv);
+p1, dp = nrbdeval(crv,dcrv,tt);
+
+p2 = vecnorm_toolbox(dp);
+
+plot!(p1[1,:],p1[2,:],
+      m = (3, :transparent, stroke(1, :red)),
+      st = :scatter,
+      legend = false);
+plot!(p1[1,:],p1[2,:],
+      st=:quiver,
+      quiver=(p2[1,:],p2[2,:]),
+      c=:red);
+end # demodercrv

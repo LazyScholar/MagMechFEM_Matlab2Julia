@@ -31,7 +31,7 @@ Plot a NURBS curve or a surface.
 - `plotargs`: plot arguments to pass to the wrapped plot function
 
 !!! note "Note:"
-    For 3D Plots `nrbplot()` uses the `Plots.pyplot()` backend. Use plot
+    For 3D Plots `nrbplot` uses the `Plots.pyplot()` backend. Use plot
     arguments compatible with that backend.
 
 # Examples:

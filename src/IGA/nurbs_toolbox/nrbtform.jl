@@ -55,14 +55,13 @@ function nrbtform(nurbs::NURBS{I,F},tmat::Matrix{F}
 if size(tmat) != (4,4)
   throw(ArgumentError("Transformation matrix must be of size 4x4 !"));
 end # if
-tnurbs = nurbs;
 if typeof(nurbs)<:NURBS2D
   # NURBS is a surface
   dim, nu, nv = size(nurbs.coefs);
-  tnurbs.coefs .= reshape(tmat*reshape(nurbs.coefs,[dim,nu*nv]),[dim,nu,nv]);
+  return nrbmak(reshape(tmat*reshape(nurbs.coefs,(dim,nu*nv)),(dim,nu,nv)),
+                nurbs.knots);
 else
   # NURBS is a curve
-  tnurbs.coefs .= tmat * nurbs.coefs;
+  return nrbmak(tmat*nurbs.coefs,nurbs.knots);
 end # if
-return tnurbs;
 end # nrbtform

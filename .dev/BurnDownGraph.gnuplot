@@ -48,13 +48,15 @@ set bmargin 3
 
 set multiplot layout 3,1
 
+set key left center
+
 set ylabel "number of files" textcolor "#808080"
 set y2label "hours used" textcolor "#808080"
 set ytics 100
 
 plot DATA using 1:6 with lines linewidth 0.75 linecolor rgb "#808080" title "time used" axis x1y2, \
-       '' using 1:10:(86400) with boxes fillstyle transparent solid 0.75 border linecolor rgb "#808080" linewidth 0.3 fillcolor rgb "#eeaa55" title "completed files" axis x1y1, \
-       '' using 1:($5-$10) with linespoints pointtype 7 pointsize 0.6 linewidth 1.4 linecolor rgb "#2255bb" title "remaining lines" axis x1y1
+       '' using 1:20:(86400) with boxes fillstyle transparent solid 0.75 border linecolor rgb "#808080" linewidth 0.3 fillcolor rgb "#eeaa55" title "completed files" axis x1y1, \
+       '' using 1:($5-$10) with linespoints pointtype 7 pointsize 0.6 linewidth 1.4 linecolor rgb "#2255bb" title "remaining files" axis x1y1
 
 set ylabel "lines of code" textcolor "#808080"
 set format y "%2.0t×10^{%L}"
@@ -62,13 +64,13 @@ set ytics 10000
 unset y2label
 unset y2tics
 
-plot DATA using 1:9:(86400) with boxes fillstyle transparent solid 0.75 border linecolor rgb "#808080" linewidth 0.3 fillcolor rgb "#eeaa55" title "completed lines" axis x1y1, \
+plot DATA using 1:19:(86400) with boxes fillstyle transparent solid 0.75 border linecolor rgb "#808080" linewidth 0.3 fillcolor rgb "#eeaa55" title "completed lines" axis x1y1, \
        '' using 1:($4-$9) with linespoints pointtype 7 pointsize 0.6 linewidth 1.4 linecolor rgb "#2255bb" title "remaining lines" axis x1y1
 
 set ylabel "total lines" textcolor "#808080"
 set xlabel "iteration timeline" textcolor "#808080"
 
-plot DATA using 1:7:(86400) with boxes fillstyle transparent solid 0.75 border linecolor rgb "#808080" linewidth 0.3 fillcolor rgb "#eeaa55" title "total lines completed" axis x1y1, \
+plot DATA using 1:17:(86400) with boxes fillstyle transparent solid 0.75 border linecolor rgb "#808080" linewidth 0.3 fillcolor rgb "#eeaa55" title "total lines completed" axis x1y1, \
        '' using 1:($2-$7) with linespoints pointtype 7 pointsize 0.6 linewidth 1.4 linecolor rgb "#22bb55" title "total remaining lines" axis x1y1
 
 unset multiplot

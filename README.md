@@ -62,7 +62,7 @@ This are the points i want to accomplish on this specific project.
 
 ![burn down graph](.dev/BurnDownGraph.svg "progress overview")
 
-The upper graph shows only the time used to translate the files not the debugging, testing or tinkering.
+The upper graph shows only the time used to translate the files not the debugging, testing or tinkering (besides the files).
 So in order to estimate the real work time one could double or triple that used time.
 The second graph shows furthermore only the lines of code which had been translated on the respective iteration.
 As the translation also involves the translation of the documentation it is more reasonable to take the total lines ported into account (third graph).

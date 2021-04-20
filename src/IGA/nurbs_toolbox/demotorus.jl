@@ -17,22 +17,25 @@
 using Plots;
 
 """
-    democirc()
+    demotorus()
 
-Demonstration of a circle arcs in the x-y plane.
+A second demonstration of surface construction.
 
 # Examples:
 ```julia
-julia> democirc()
+julia> demotorus()
 ```
 """
-function democirc()
-plot(title = "NURBS construction of a 2D circle and arc.",
-     framestyle=:box,
-     legend = false);
-for r in 1.0:9.0
-  crv = nrbcirc(r,[0.0;0.0;0.0],deg2rad(45),deg2rad(315));
-  nrbplot!(crv,50);
-end # for r
-current();
-end # democirc
+function demotorus()
+sphere = nrbrevolve(nrbcirc(1.0),[1.0;0.0;0.0]);
+nrbplot(sphere,[20;20],
+        title = "Ball and torus - surface construction by revolution.",
+        c=:copper,
+        cbar=false);
+torus = nrbrevolve(nrbcirc(0.2,[0.9;1.0]),[1.0;0.0;0.0]);
+nrbplot!(torus,[20;10],c=:copper,cbar=false);
+nrbplot!(nrbtform(torus,vectrans([-1.8])),[20;10],c=:copper,cbar=false);
+# TODO: come back later as pyplot backend does not has light/shading yet
+#       furthermore grid lines should be off and interpolated shading should be
+#       on
+end # demotorus

@@ -30,7 +30,7 @@ The matrix is:
 
 # Arguments:
 - `tvec`: A vectors defining the translation along the x,y and z axes.
-  i.e. [tx, ty, ty]
+  i.e. `[tx; ty; ty]`
 
 # Output:
 - `st`: Translation Transformation Matrix
@@ -40,8 +40,8 @@ The matrix is:
 julia> st = vectrans(tvec)
 ```
 
-Translate the NURBS line (0.0,0.0,0.0) - (1.0,1.0,1.0) by 3 along the x-axis,
-2 along the y-axis and 4 along the z-axis.
+Translate the NURBS line `[0.0;0.0;0.0]` - `[1.0;1.0;1.0]` by 3 along the
+x-axis, 2 along the y-axis and 4 along the z-axis.
 
 ```julia
 julia> line = nrbline(vec([0.0 0.0 0.0]),vec([1.0 1.0 1.0]));

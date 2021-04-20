@@ -49,9 +49,9 @@ julia> p,w = nrbeval(nurbs,tt,:homogeneous)
 julia> p = nrbeval(srf,[ut,vt])
 ```
 
-Evaluate the NURBS circle at twenty points from 0.0 to 1.0.
+Evaluate the NURBS circle with twenty points from 0.0 to 1.0.
 ```julia
-julia> nrb = nrbcirc;
+julia> nrb = nrbcirc();
 julia> ut = range(0.0,stop=1.0,length=20)
 julia> p = nrbeval(nrb,ut)
 ```
@@ -113,7 +113,7 @@ if typeof(nurbs)<:NURBS2D
       return val[1:3,:,:] ./ repeat(w,outer=[3,1,1]);
     else
       w = val[4:4,:,:];
-      p = val[1:3,:,:] ./ repeat(w,outer=[3,1,1]);
+      p = val[1:3,:,:];
       return p,w;
     end # if
   else
@@ -142,8 +142,8 @@ if typeof(nurbs)<:NURBS2D
       w = @view pnts[4:4,:];
       return pnts[1:3,:] ./ w;
     else
-      w = pnts[4,:];
-      p = val[1:3,:] ./ w';
+      w = pnts[4:4,:];
+      p = val[1:3,:];
       return p,w;
     end # if
   end # if
@@ -161,11 +161,9 @@ else
     w = @view val[4:4,:];
     return val[1:3,:] ./ w;
   else
-    w = val[4,:];
-    p = val[1:3,:] ./ w';
+    w = val[4:4,:];
+    p = val[1:3,:];
     return p,w;
   end # if
-
 end # if
-
 end # nrbeval

@@ -15,7 +15,7 @@
 #    along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 """
-    nrbcylind(height::F=1.0,radius::F=1.0,center::Vector{Any}=[],
+    nrbcylind(height::F=1.0,radius::F=1.0,center::Vector{F}=[0.0;0.0;0.0],
               sang::F=0.0,eang::F=2.0*π)::NURBS2D where {F<:AbstractFloat}
 
 Construct a cylinder or cylindrical patch by extruding a circular arc (see
@@ -43,10 +43,11 @@ julia> crv = nrbcylind(height,radius,center,sang,eang)
 # References:
 - see also [`nrbcirc`](@ref)
 """
-function nrbcylind(height::F=1.0,radius::F=1.0,center::Vector{Any}=[],
+function nrbcylind(height::F=1.0,radius::F=1.0,center::Vector{F}=[0.0;0.0;0.0],
                    sang::F=0.0,eang::F=2.0*π)::NURBS2D where {F<:AbstractFloat}
 # TODO: maybe revisit this function and split it up
-# TODO: optional arguments should be at the end the center=[] solution is
-#       therefore a bad hack
+# TODO: optional arguments in julia are always at the end and providing [] as
+#       argument input is a bad habbit i changed the argument behaviour for
+#       center > examine if that did change the behaviour in this toolbox
 return nrbextrude(nrbcirc(radius,center,sang,eang),vec([0.0 0.0 height]));
 end # nrbcylind

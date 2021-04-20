@@ -15,13 +15,11 @@
 #    along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 """
-    nrbcirc(radius::F=1.0,center::Vector{Any}=[],
+    nrbcirc(radius::F=1.0,center::Vector{F}=[0.0;0.0;0.0],
             sang::F=0.0,eang::F=2.0*π)::NURBS1D where {F<:AbstractFloat}
 
-Construct a circular arc.
-
 Constructs NURBS data structure for a circular arc in the x-y plane. If no
-arguments are supplied a unit circle with center (0.0,0.0) is constructed.
+arguments are supplied a unit circle with center `[0.0;0.0]` is constructed.
 
 Angles are defined as positive in the anti-clockwise direction.
 
@@ -42,11 +40,12 @@ julia> crv = nrbcirc(radius,center)
 julia> crv = nrbcirc(radius,center,sang,eang)
 ```
 """
-function nrbcirc(radius::F=1.0,center::Vector{Any}=[],
+function nrbcirc(radius::F=1.0,center::Vector{F}=[0.0;0.0;0.0],
                  sang::F=0.0,eang::F=2.0*π)::NURBS1D where {F<:AbstractFloat}
 # TODO: maybe revisit this function and split it up
-# TODO: optional arguments should be at the end the center=[] solution is
-#       therefore a bad hack
+# TODO: optional arguments in julia are always at the end and providing [] as
+#       argument input is a bad habbit i changed the argument behaviour for
+#       center > examine if that did change the behaviour in this toolbox
 
 # sweep angle of arc
 sweep = eang - sang;
@@ -94,13 +93,9 @@ for n in 2:narcs
 end # if
 
 # vectrans arc if necessary
-if !(isempty(center))
-  if typeof(center)<:Vector{F}
-    xx = vectrans(center);
-    coefs = xx * coefs;
-  else
-    throw(ArgumentError("Center Vector musst be of Float values!"));
-  end
+if !(all(i->i==0,center))
+  xx = vectrans(center);
+  coefs = xx * coefs;
 end
 
 return nrbmak(coefs,knots);

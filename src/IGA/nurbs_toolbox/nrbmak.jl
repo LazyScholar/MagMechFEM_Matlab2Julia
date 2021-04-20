@@ -38,14 +38,16 @@ own structure, in fact a few functions in the toolbox do this for convenience.
   `nu` is number of points along the parametric U direction, and `nv` the
   number of points along the V direction. `dim` is the dimension valid options
   are:
+
     2 : (x,y)        2D Cartesian coordinates
     3 : (x,y,z)      3D Cartesian coordinates
     4 : (wx,wy,wz,w) 4D homogeneous coordinates
-- `knots`: Non-decreasing knot sequence spanning the interval [0.0,1.0]. It is
-  assumed that the curves and surfaces are clamped to the start and end control
-  points by knot multiplicities equal to the spline order. For a curve knots
-  form a vector and for a surface the knots are stored by two vectors for U and
-  V in a vector of vectors [uknots; vknots]
+
+- `knots`: Non-decreasing knot sequence spanning the interval `[0.0;1.0]`. It
+  is assumed that the curves and surfaces are clamped to the start and end
+  control points by knot multiplicities equal to the spline order. For a curve
+  knots form a vector and for a surface the knots are stored by two vectors for
+  U and V in a vector of vectors `[uknots, vknots]`
 
 # Output:
 - `nurbs`: NURBS data structure see [`NURBS1D`](@ref) and [`NURBS2D`](@ref).
@@ -57,9 +59,9 @@ own structure, in fact a few functions in the toolbox do this for convenience.
     respectively.
 
 # Examples:
-Construct a 2D line from (0.0,0.0) to (1.5,3.0). For a straight line a spline
-of order 2 is required. Note that the knot sequence has a multiplicity of 2 at
-the start (0.0,0.0) and end (1.0 1.0) in order to clamp the ends.
+Construct a 2D line from `[0.0;0.0]` to `[1.5;3.0]`. For a straight line a
+spline of order 2 is required. Note that the knot sequence has a multiplicity
+of 2 at the start `[0.0;0.0]` and end `[1.0;1.0]` in order to clamp the ends.
 
 ```julia
 julia> line = nrbmak([0.0 1.5; 0.0 3.0],vec([0.0 0.0 1.0 1.0]))
@@ -165,7 +167,7 @@ NURBS datatype representing a NURBS curve. Constructed with [`nrbmak`](@ref).
     structure as 4D homogeneous coordinates.
 
 # Field
-$(DocStringExtensions.FIELDS)
+$(DocStringExtensions.TYPEDFIELDS)
 """
 struct NURBS1D{I<:Integer,F<:AbstractFloat} <: NURBS{I,F}
 "Type name 'B-NURBS'"
@@ -194,7 +196,7 @@ NURBS datatype representing a NURBS surface. Constructed with [`nrbmak`](@ref).
     respectively.
 
 # Field
-$(DocStringExtensions.FIELDS)
+$(DocStringExtensions.TYPEDFIELDS)
 """
 struct NURBS2D{I<:Integer,F<:AbstractFloat} <: NURBS{I,F}
 "Type name 'B-NURBS'"

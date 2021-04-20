@@ -30,7 +30,7 @@ The matrix is:
 
 # Arguments:
 - `svec`: A vectors defining the scaling along the x,y and z axes.
-  i.e. [sx, sy, sy]
+  i.e. `[sx; sy; sy]`
 
 # Output:
 - `st`: Scaling Transformation Matrix
@@ -40,8 +40,8 @@ The matrix is:
 julia> ss = vecscale(svec)
 ```
 
-Scale up the NURBS line (0.0,0.0,0.0) - (1.0,1.0,1.0) by 3 along
-the x-axis, 2 along the y-axis and 4 along the z-axis.
+Scale up the NURBS line `[0.0;0.0;0.0]` - `[1.0;1.0;1.0]` by 3 along the
+x-axis, 2 along the y-axis and 4 along the z-axis.
 
 ```julia
 julia> line = nrbline(vec([0.0 0.0 0.0]),vec([1.0 1.0 1.0]));

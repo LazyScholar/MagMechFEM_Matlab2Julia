@@ -30,7 +30,10 @@ This package is licensed under GNU General Puplic License version 2.
 [^2]: M. Spink, D. Claxton, C. de Falco, R. Vazquez (2021-03-09) Nurbs. Octave Forge Community packages. [https://octave.sourceforge.io/nurbs/index.html](https://octave.sourceforge.io/nurbs/index.html)
 
 # Exports
-$(EXPORTS)
+$(DocStringExtensions.EXPORTS)
+
+# Imports
+$(DocStringExtensions.IMPORTS)
 """
 module NURBStoolbox
 
@@ -43,7 +46,6 @@ export NURBS, NURBS1D, NURBS2D, nrbmak;
 include("nrbmak.jl");
 export nrbeval;
 include("nrbeval.jl");
-# rework this to use recipies or find a robust solution that works for 3D
 export nrbplot, nrbplot!;
 include("nrbplot.jl");
 
@@ -64,6 +66,8 @@ export nrbtform;
 include("nrbtform.jl");
 export nrbextrude;
 include("nrbextrude.jl");
+export nrbrevolve;
+include("nrbrevolve.jl");
 export vecdot;
 include("vecdot.jl");
 export veccross;
@@ -78,6 +82,20 @@ export vecangle;
 include("vecangle.jl");
 export nrbtransp;
 include("nrbtransp.jl");
+export bspdegelev;
+include("bspdegelev.jl")
+export nrbdegelev;
+include("nrbdegelev.jl");
+export bspkntins;
+include("bspkntins.jl");
+export nrbkntins;
+include("nrbkntins.jl");
+export bspderiv;
+include("bspderiv.jl");
+export nrbderiv;
+include("nrbderiv.jl");
+export nrbdeval;
+include("nrbdeval.jl");
 # deg2rad is a julia build in function therefore omitted
 # rad2deg is a julia build in function therefore omitted
 
@@ -110,5 +128,17 @@ export demohelix;
 include("demohelix.jl");
 export democylind;
 include("democylind.jl");
+export demotorus;
+include("demotorus.jl");
+export demorevolve;
+include("demorevolve.jl");
+export demodegelev;
+include("demodegelev.jl")
+export demokntins;
+include("demokntins.jl")
+export demodercrv;
+include("demodercrv.jl");
+export demodersrf;
+include("demodersrf.jl");
 
 end # NURBStoolbox

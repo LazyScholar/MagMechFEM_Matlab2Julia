@@ -27,9 +27,8 @@ julia> democylind()
 ```
 """
 function democylind()
-srf = nrbcylind(3.0,1.0,[],deg2rad(270),deg2rad(180));
+srf = nrbcylind(3.0,1.0,[0.0;0.0;0.0],deg2rad(270),deg2rad(180));
 nrbplot(srf,[20;20],
         title = "Cylindrical section by extrusion of a circular arc.",
-        framestyle=:box,
         legend = false);
 end # democylind

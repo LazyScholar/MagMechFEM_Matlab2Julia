@@ -30,6 +30,5 @@ function demoline()
 crv = nrbline(vec([0.0 0.0 0.0]),vec([5.0 4.0 2.0]));
 nrbplot(crv,1,
         title = "3D straight line.",
-        framestyle=:box,
         legend = false);
 end # demoline

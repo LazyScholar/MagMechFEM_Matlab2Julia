@@ -35,7 +35,7 @@ Determines the magnitude of vectors.
 julia> mvec = vecmag(vec)
 ```
 
-Find the magnitude of the two vectors (0.0,2.0,1.3) and (1.5,3.4,2.3)
+Find the magnitude of the two vectors `[0.0;2.0;1.3]` and `[1.5;3.4;2.3]`.
 ```julia
 julia> mvec = vecmag([0.0 1.5; 2.0 3.4; 1.3 2.3])
 ```

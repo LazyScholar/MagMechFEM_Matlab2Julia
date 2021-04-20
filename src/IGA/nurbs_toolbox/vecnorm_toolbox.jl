@@ -15,7 +15,8 @@
 #    along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 """
-    vecnorm_toolbox(vec::Matrix{F})::Matrix{F} where {F<:AbstractFloat}
+    vecnorm_toolbox(vec::Union{Matrix{F}, Array{F,3}}
+                   )::Union{Matrix{F}, Array{F,3}} where {F<:AbstractFloat}
 
 or
 
@@ -28,19 +29,20 @@ Normalises the array of vectors, returning the unit vectors.
   where `dim` is the dimension of the vector and `nv` the number of vectors.
 
 # Output:
-- `nvec`: Normalised vectors, matrix the smae size as vec.
+- `nvec`: Normalised vectors, matrix the same size as `vec`.
 
 # Examples:
 ```julia
 julia> nvec = vecnorm_toolbox(vec)
 ```
 
-Normalise the two vectors (0.0,2.0,1.3) and (1.5,3.4,2.3).
+Normalise the two vectors `[0.0;2.0;1.3]` and `[1.5;3.4;2.3]`.
 ```julia
 julia> nvec = vecnorm_toolbox([0.0 1.5; 2.0 3.4; 1.3 2.3])
 ```
 """
-function vecnorm_toolbox(vec::Matrix{F})::Matrix{F} where {F<:AbstractFloat}
+function vecnorm_toolbox(vec::Union{Matrix{F}, Array{F,3}}
+                        )::Union{Matrix{F},Array{F,3}} where {F<:AbstractFloat}
 return vec ./ sqrt.(sum(vec.^2,dims=1));
 end # vecnorm_toolbox
 

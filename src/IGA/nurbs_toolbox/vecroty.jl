@@ -40,8 +40,8 @@ The matrix is:
 julia> ry = vecroty(angle)
 ```
 
-Rotate the NURBS line (0.0 0.0 0.0) - (3.0 3.0 3.0) by 45 degrees
-around the y-axis
+Rotate the NURBS line `[0.0;0.0;0.0]` - `[3.0;3.0;3.0]` by 45 degrees around
+the y-axis
 
 ```julia
 julia> line = nrbline(vec([0.0 0.0 0.0]),vec([3.0 3.0 3.0]));

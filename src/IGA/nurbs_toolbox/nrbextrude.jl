@@ -16,7 +16,7 @@
 
 """
     nrbextrude(curve::NURBS1D{I,F},vector::Vector{F}
-            )::NURBS2D{I,F} where {I<:Integer,F<:AbstractFloat}
+              )::NURBS2D{I,F} where {I<:Integer,F<:AbstractFloat}
 
 Construct a NURBS surface by extruding a NURBS curve.
 
@@ -39,7 +39,7 @@ julia> srf = nrbextrude(crv,vec)
 Form a hollow cylinder by extruding a circle along the z-axis.
 
 ```julia
-srf = nrbextrude(nrbcirc,[0.0;0.0;1.0]);
+srf = nrbextrude(nrbcirc(),[0.0;0.0;1.0]);
 ```
 """
 function nrbextrude(curve::NURBS1D{I,F},vector::Vector{F}
