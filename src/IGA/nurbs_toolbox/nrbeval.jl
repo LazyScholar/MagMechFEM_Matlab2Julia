@@ -52,7 +52,7 @@ julia> p = nrbeval(srf,[ut,vt])
 Evaluate the NURBS circle with twenty points from 0.0 to 1.0.
 ```julia
 julia> nrb = nrbcirc();
-julia> ut = range(0.0,stop=1.0,length=20)
+julia> ut = collect(range(0.0,stop=1.0,length=20))
 julia> p = nrbeval(nrb,ut)
 ```
 

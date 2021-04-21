@@ -29,9 +29,12 @@ The original description characterizing this toolbox has been published on the w
 >
 > The NURBS toolbox is provide free of any charges and has a GPL license. The source code is available for the Linux, Solaris and Windows, however should compile easily on other platforms.
 
+I did not port the `igesout` function found in this toolbox as it is not main part of this toolbox, not necessary for this project and its licence was unclear[^4].
+
 [^1]: Spink, M. (2016, Jan. 10) NURBS Toolbox. ARIA. `http://aria.uklinux.net/nurbs.php3` accessible via [WayBackMachine](https://web.archive.org/web/20160110131409/aria.uklinux.net/nurbs.php3)
 [^2]: Penguian (2010). NURBS Toolbox by D.M. Spink [https://www.mathworks.com/matlabcentral/fileexchange/26390-nurbs-toolbox-by-d-m-spink](https://www.mathworks.com/matlabcentral/fileexchange/26390-nurbs-toolbox-by-d-m-spink), MATLAB Central File Exchange. Retrieved April 14, 2021.
 [^3]: M. Spink, D. Claxton, C. de Falco, R. Vazquez (2021-03-09) Nurbs. Octave Forge Community packages. [https://octave.sourceforge.io/nurbs/index.html](https://octave.sourceforge.io/nurbs/index.html)
+[^4]:  Daniel Claxton (2021). igesout [https://www.mathworks.com/matlabcentral/fileexchange/14470-igesout](https://www.mathworks.com/matlabcentral/fileexchange/14470-igesout), MATLAB Central File Exchange. Retrieved April 21, 2021.
 
 ## Examples
 
@@ -48,6 +51,14 @@ using NURBStoolbox; # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 democirc()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demogeom()
 plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
 ```
 
@@ -120,6 +131,30 @@ using NURBStoolbox; # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demodersrf()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demoruled()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+demo4surf()
+plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
+```
+
+```@example
+using NURBStoolbox; # hide
+using Plots; # hide
+Plots.pyplot(); # hide
+democoons()
 plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
 ```
 

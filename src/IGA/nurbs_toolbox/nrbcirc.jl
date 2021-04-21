@@ -78,9 +78,9 @@ xm = x + y * tan(dsweep);
 
 # arc segment control points
 ctrlpt = [ x wm*xm x;  # w*x - coordinate
-          -y 0     y;  # w*y - coordinate
-           0 0     0;  # w*z - coordinate
-           1 wm    1]; # w   - coordinate
+          -y   0   y;  # w*y - coordinate
+           0   0   0;  # w*z - coordinate
+           1   wm  1]; # w   - coordinate
 
 # build up complete arc from rotated segments
 coefs = zeros(F,(4,2*narcs+1)); # nurbs control points of arc
@@ -96,7 +96,7 @@ end # if
 if !(all(i->i==0,center))
   xx = vectrans(center);
   coefs = xx * coefs;
-end
+end # if
 
 return nrbmak(coefs,knots);
 end # nrbcirc

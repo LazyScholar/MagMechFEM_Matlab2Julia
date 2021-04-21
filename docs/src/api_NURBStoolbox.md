@@ -60,6 +60,9 @@ nrbkntins
 bspderiv
 nrbderiv
 nrbdeval
+nrbreverse
+nrbruled
+nrbcoons
 ```
 
 
@@ -68,6 +71,7 @@ nrbdeval
 ```@docs
 nrbline
 nrbrect
+nrb4surf
 nrbcirc
 nrbcylind
 ```
@@ -90,6 +94,10 @@ demodegelev
 demokntins
 demodercrv
 demodersrf
+demoruled
+democoons
+demo4surf
+demogeom
 ```
 
 ## Private Functions/Methods

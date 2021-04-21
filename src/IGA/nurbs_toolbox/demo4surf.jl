@@ -17,45 +17,23 @@
 using Plots;
 
 """
-    demodersrf()
+    demo4surf()
 
-Demonstrates the construction of a general surface derivatives.
+Demonstration of a bilinear surface.
 
 # Examples:
 ```julia
-julia> demodersrf()
+julia> demo4surf()
 ```
 """
-function demodersrf()
+function demo4surf()
 # make and draw nurbs test surface
-srf = nrbtestsrf();
-nrbplot(srf,[20;20],
-        title = "First derivatives over a test surface.",
+srf = nrb4surf([0.0;0.0;0.5],[1.0;0.0;-0.5],[0.0;1.0;-0.5],[1.0;1.0;0.5]);
+nrbplot(srf,[10;10],
+        title = "Construction of a bilinear surface.",
         c = :winter,
         legend = nothing,
         linewidth = 0.5,
         linecolor = :black,
         camera=[-30,30]);
-
-npts = 5;
-tt = collect(range(0.0,1.0,length=npts));
-
-dsrf = nrbderiv(srf);
-p1, dp = nrbdeval(srf,dsrf,[tt,tt]);
-
-up2 = vecnorm_toolbox(dp[1]);
-vp2 = vecnorm_toolbox(dp[2]);
-
-plot!(vec(p1[1,:,:]),vec(p1[2,:,:]),vec(p1[3,:,:]),
-      m = (3, :transparent, stroke(1, :red)),
-      st = :scatter,
-      legend = false);
-plot!(vec(p1[1,:,:]),vec(p1[2,:,:]),vec(p1[3,:,:]),
-      st=:quiver,
-      quiver=(vec(up2[1,:,:]),vec(up2[2,:,:]),vec(up2[3,:,:])),
-      c=:red);
-plot!(vec(p1[1,:,:]),vec(p1[2,:,:]),vec(p1[3,:,:]),
-      st=:quiver,
-      quiver=(vec(vp2[1,:,:]),vec(vp2[2,:,:]),vec(vp2[3,:,:])),
-      c=:red);
-end # demodersrf
+end # demo4surf

@@ -23,10 +23,10 @@ Returns a (4x4) Transformation matrix for translation.
 
 The matrix is:
 
-    [ 1   0   0   tx ]
-    [ 0   1   0   ty ]
-    [ 0   0   1   tz ]
-    [ 0   0   0   1  ]
+    [ 1   0   0  tx ]
+    [ 0   1   0  ty ]
+    [ 0   0   1  tz ]
+    [ 0   0   0   1 ]
 
 # Arguments:
 - `tvec`: A vectors defining the translation along the x,y and z axes.

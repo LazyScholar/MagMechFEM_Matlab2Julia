@@ -23,10 +23,10 @@ Returns a (4x4) Transformation matrix for scaling.
 
 The matrix is:
 
-    [ sx  0   0   0]
-    [ 0   sy  0   0]
-    [ 0   0   sz  0]
-    [ 0   0   0   1]
+    [ sx   0   0   0]
+    [  0  sy   0   0]
+    [  0   0  sz   0]
+    [  0   0   0   1]
 
 # Arguments:
 - `svec`: A vectors defining the scaling along the x,y and z axes.

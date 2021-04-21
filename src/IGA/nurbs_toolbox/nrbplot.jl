@@ -67,8 +67,6 @@ function nrbplot(nurbs::NURBS{I,F},
 #       errors get caught
 # TODO: have a look into Recipes to make the plotting more adaptive and to
 #       maybe replace this function
-# TODO: implement a nrbplot!() version or allow overloading and pass that ! to
-#       the plot routines
 
 # TODO: make this workaround obsolete with Recipes
 # filter out key indicating append to old plot as workaround

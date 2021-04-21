@@ -36,6 +36,11 @@ $(DocStringExtensions.EXPORTS)
 $(DocStringExtensions.IMPORTS)
 """
 module NURBStoolbox
+# deg2rad: is a julia build in function therefore omitted
+# rad2deg: is a julia build in function therefore omitted
+# igesout: is a not necessary third party functions with uncertain licence
+#          and was therefore not ported
+# demos  : seemed to be a matlab interface to create demo views -> not ported
 
 # Evaluation functions/methods
 export basisfun;
@@ -96,14 +101,20 @@ export nrbderiv;
 include("nrbderiv.jl");
 export nrbdeval;
 include("nrbdeval.jl");
-# deg2rad is a julia build in function therefore omitted
-# rad2deg is a julia build in function therefore omitted
+export nrbreverse;
+include("nrbreverse.jl");
+export nrbruled;
+include("nrbruled.jl");
+export nrbcoons;
+include("nrbcoons.jl");
 
 # "recipes" of NURBS structures
 export nrbline;
 include("nrbline.jl");
 export nrbrect;
 include("nrbrect.jl");
+export nrb4surf;
+include("nrb4surf.jl");
 export nrbcirc;
 include("nrbcirc.jl");
 export nrbcylind;
@@ -140,5 +151,14 @@ export demodercrv;
 include("demodercrv.jl");
 export demodersrf;
 include("demodersrf.jl");
+export demoruled;
+include("demoruled.jl");
+export demo4surf;
+include("demo4surf.jl");
+export democoons;
+include("democoons.jl");
+export demogeom;
+include("demogeom.jl");
+
 
 end # NURBStoolbox

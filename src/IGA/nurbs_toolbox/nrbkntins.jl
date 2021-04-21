@@ -67,7 +67,7 @@ function nrbkntins(nurbs::NURBS{I,F},iknots::Union{Vector{F},Vector{Vector{F}}}
 degree = nurbs.order .- 1;
 
 if typeof(nurbs)<:NURBS2D
-  if typeof(iknots)<:Vector{F} || length(ntimes) != 2
+  if typeof(iknots)<:Vector{F} || length(iknots) != 2
     throw(ArgumentError("iknots must be a vector of two Vector{F}!"));
   end # if
   # NURBS represents a surface
