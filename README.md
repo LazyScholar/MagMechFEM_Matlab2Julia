@@ -42,7 +42,7 @@ The main motivations for this project are:
 I decided to do this project after looking into Julia and its possibilities.
 I searched for a ecosystem similar to Matlab where the prototyping could be done easily.
 The main selling points of Matlab i.m.o. are the integrated plotting, the high level functions and the IDE functionality allowing the exploration of the variables.
-Julia does provide all that except for the IDE functionality. But it is free and it claims to be faster than Matlab or Python (according to their information).
+Julia does provide all that except for the IDE functionality. But it is free and claims to be faster than Matlab or Python (according to their information).
 
 ## Road map
 
