@@ -3,17 +3,39 @@ ENV["GKSwstype"] = "nul"
 
 # get path of docs folders
 cdir = dirname(@__FILE__);
+ldir = joinpath(cdir,"literate");
+tdir = joinpath(cdir,"src","literate");
 
 # add look up paths
 push!(LOAD_PATH, joinpath(cdir, ".."));
+# TODO: delete this later
+push!(LOAD_PATH, joinpath(cdir,"..","src/IGA/nurbs_toolbox"));
 #push!(LOAD_PATH,"../src)
 
-using Test, Documenter;
+using Test, Documenter, DocumenterCitations;
+using Literate;
 
-#using SRC_PACKAGE
+# TODO: update this at the end
+using NURBStoolbox;
 
 # check if run by CI
 CIflag = get(ENV,"CI","") != "";
+
+# directory filtering function
+filterdir(ext,path) = filter(x->(contains(x,ext) && isfile(joinpath(path,x))),
+                             readdir(path));
+
+# convert  literate files to markdown
+for f in filterdir(".jl",ldir)
+  if CIflag
+    Literate.markdown(joinpath(ldir,f),tdir);
+  else
+    Literate.markdown(joinpath(ldir,f),tdir,
+                      repo_root_url="../../..");
+  end
+end
+
+bib = CitationBibliography(joinpath(cdir, "bibliography.bib"))
 
 htmlwriter = Documenter.HTML(
               collapselevel = 2,
@@ -22,10 +44,17 @@ htmlwriter = Documenter.HTML(
              );
 
 pages = ["Home"       => "index.md",
+         "Packages"   => [ "NURBS Toolbox" => "NURBStoolbox.md", ],
+         "API"        => [ "NURBS Toolbox" => "api_NURBStoolbox.md", ],
+         "Examples"   => [ "NURBS Toolbox" => "literate/ex_NURBStoolbox.md", ],
+         "References" => "references.md",
         ];
 
-makedocs(sitename = "MagMechFEM_Matlab2Julia",
+makedocs(bib,
+         sitename = "MagMechFEM_Matlab2Julia",
          authors = "J. A. Duffek",
+         # TODO update this at the end
+         modules = [NURBStoolbox],
          format = htmlwriter,
          doctest = false,
          clean = true,
@@ -34,7 +63,6 @@ makedocs(sitename = "MagMechFEM_Matlab2Julia",
 
 if CIflag
   deploydocs(
-    # TODO:
       repo = "github.com/LazyScholar/MagMechFEM_Matlab2Julia.git",
       push_preview = true,
       forcepush = true,

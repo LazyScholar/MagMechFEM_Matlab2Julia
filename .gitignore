@@ -5,6 +5,15 @@
 *.jl.*.cov
 *.jl.mem
 *~
+*.bib.bak
+*.bib.sav
+*.bib.sav.bak
+TAGS
+
+# do not use notebooks in git!
+# convert them to literate format for version control
+*.ipynb
+**/.ipynb_checkpoints
 
 # data files
 *.vtk
@@ -26,6 +35,17 @@
 docs/build/
 !docs/src/**/*.png
 !docs/src/**/*.svg
+docs/src/literate/**
 
 # Julia system images
 *.so
+
+# development files
+!.dev/BurnDownGraph.svg
+.dev/tempdata.csv
+
+# editor directories
+.vscode/**
+
+# ported material models are private
+src/InitialConditions/**
