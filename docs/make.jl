@@ -55,7 +55,7 @@ makedocs(bib,
          sitename = "MagMechFEM_Matlab2Julia",
          authors = "J. A. Duffek",
          # TODO update this at the end
-#         modules = [NURBStoolbox]
+         modules = [NURBStoolbox],
          format = htmlwriter,
          doctest = false,
          clean = true,

@@ -11,7 +11,7 @@ jobs:
   docs-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.2.0
       - uses: julia-actions/setup-julia@latest
         with:
           version: 1.6
@@ -31,6 +31,7 @@ jobs:
 
       # https://discourse.julialang.org/t/recommendation-cache-julia-artifacts-in-ci-services/35484
       # more info: https://github.com/marketplace/actions/cache
+      # TODO: have a look if the compiled/installed julia packages could be cached
       - name: Cache artifacts
         uses: actions/cache@v2
         env:
@@ -58,7 +59,6 @@ jobs:
         # an X session to run without warnings
         env:
           JULIA_PROJECT: "docs/"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token
-          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }} # For authentication with SSH deploy key
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           XDG_RUNTIME_DIR: "/home/runner"
         run: xvfb-run -- julia --project=docs/ --color=yes docs/make.jl

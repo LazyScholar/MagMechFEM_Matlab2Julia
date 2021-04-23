@@ -4,5 +4,3 @@
 Pages = ["index.md","NURBStoolbox.md"]
 Depth = 2
 ```
-
-
