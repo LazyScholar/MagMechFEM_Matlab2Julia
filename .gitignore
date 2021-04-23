@@ -1,0 +1,31 @@
+# temporary files and folders
+*.DS_Store
+*.swp
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+*~
+
+# data files
+*.vtk
+*.dat
+*.vtu
+*.pvtu
+*.nc
+*.jld2
+
+# figures, pictures and videos
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.gif
+*.mp4
+
+# automatic documentation
+docs/build/
+!docs/src/**/*.png
+!docs/src/**/*.svg
+
+# Julia system images
+*.so
