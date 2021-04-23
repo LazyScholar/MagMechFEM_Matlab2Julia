@@ -6,17 +6,14 @@
 *.jl.mem
 *~
 *.bib.bak
-**/.ipynb_checkpoints
+*.bib.sav
+*.bib.sav.bak
 TAGS
 
-# automatic documentation
-docs/build/
-!docs/src/**/*.png
-!docs/src/**/*.svg
-docs/src/notebooks/**
-!docs/src/notebooks/*.md
-
-# dependencies
+# do not use notebooks in git!
+# convert them to literate format for version control
+*.ipynb
+**/.ipynb_checkpoints
 
 # data files
 *.vtk
@@ -34,13 +31,21 @@ docs/src/notebooks/**
 *.gif
 *.mp4
 
+# automatic documentation
+docs/build/
+!docs/src/**/*.png
+!docs/src/**/*.svg
+docs/src/literate/**
+
 # Julia system images
 *.so
 
 # development files
-!.dev/burndowngraph.svg
+!.dev/BurnDownGraph.svg
 .dev/tempdata.csv
 
+# editor directories
+.vscode/**
 
 # ported material models are private
 src/InitialConditions/**
