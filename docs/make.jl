@@ -16,7 +16,6 @@ using Test, Documenter, DocumenterCitations;
 using Literate;
 
 # TODO: update this at the end
-#using SRC_PACKAGE
 using NURBStoolbox;
 
 # check if run by CI
