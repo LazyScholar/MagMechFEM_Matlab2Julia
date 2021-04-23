@@ -11,16 +11,49 @@ Depth = 2
 
 ## Module
 
+```@raw html
+<style>
+#horlist ul {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+grid-gap: 4px;
+list-style: none;
+}
+</style>
+<div id="horlist">
+```
+
 ```@docs
 NURBStoolbox
 ```
 
+```@raw html
+</div>
+```
+
 ## Data Structures
+
+
+```@raw html
+<style>
+#horfield li > p + p::before {
+content: ": ";
+}
+#horfield li > p {
+display: contents;
+}
+</style>
+<div id="horfield">
+```
 
 ```@docs
 NURBS
 NURBS1D
 NURBS2D
+```
+
+```@raw html
+</div>
 ```
 
 ## Evaluation Functions/Methods

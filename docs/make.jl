@@ -1,80 +1,75 @@
-# assure that the operations are run from /docs/ directory
-cd(dirname(@__FILE__))
-# pull in the source path
-push!(LOAD_PATH,joinpath(@__DIR__,"..","src/IGA/nurbs_toolbox"));
+# https://github.com/jheinen/GR.jl/issues/278#issuecomment-587090846
+ENV["GKSwstype"] = "nul"
 
+# get path of docs folders
+cdir = dirname(@__FILE__);
+ldir = joinpath(cdir,"literate");
+tdir = joinpath(cdir,"src","literate");
+
+# add look up paths
+push!(LOAD_PATH, joinpath(cdir, ".."));
+# TODO: delete this later
+push!(LOAD_PATH, joinpath(cdir,"..","src/IGA/nurbs_toolbox"));
+#push!(LOAD_PATH,"../src)
+
+using Test, Documenter, DocumenterCitations;
+using Literate;
+
+# TODO: update this at the end
 #using SRC_PACKAGE
-using Test;
-using Documenter;
-using DocumenterCitations;
-using Weave;
-
 using NURBStoolbox;
+
+# check if run by CI
+CIflag = get(ENV,"CI","") != "";
 
 # directory filtering function
 filterdir(ext,path) = filter(x->(contains(x,ext) && isfile(joinpath(path,x))),
                              readdir(path));
 
-# convert the notebooks to weave in order to have them in source control
-for f in replace.(filterdir(".ipynb","./notebooks/"),".ipynb"=>"")
-  file = joinpath(@__DIR__,"notebooks",f);
-  if !(isfile("$file.jl"))
-    @info "converting $f to weave file"
-    convert_doc("$file.ipynb","$file.jl");
-    touch("$file.jl");
-    touch("$file.ipynb");
+# convert  literate files to markdown
+for f in filterdir(".jl",ldir)
+  if CIflag
+    Literate.markdown(joinpath(ldir,f),tdir);
+  else
+    Literate.markdown(joinpath(ldir,f),tdir,
+                      repo_root_url="../../..");
   end
 end
 
-# convert weave files to notebooks and markdown in order to allow the use of
-# them in the documentation an to modify the easily
-for f in replace.(filterdir(".jl","./notebooks/"),".jl"=>"")
-  file = joinpath(@__DIR__,"notebooks",f);
-  if isfile("$file.ipynb") &&
-    if stat("$file.jl").mtime < stat("$file.ipynb").mtime
-      @info "updating $f.jl from notebook file"
-      convert_doc("$file.ipynb","$file.jl");
-      touch("$file.ipynb");
-      continue
-    elseif stat("$file.jl").mtime == stat("$file.ipynb").mtime
-      @info "$f.jl and $f.ipynb up to date"
-      continue
-    end
-  end
-  @info "updating $f.ipynb from weave file"
-  convert_doc("$file.jl","$file.ipynb");
-  # have a look
-  run(`jupyter nbconvert --to notebook --inplace --execute $file.ipynb`,
-      wait = true);
-  touch("$file.jl");
-  touch("$file.ipynb");
-end
-run(`jupyter nbconvert
-     --output-dir='./src/notebooks'
-     --to markdown './notebooks/*.ipynb'`);
-
-bib = CitationBibliography(joinpath(@__DIR__, "bibliography.bib"))
+bib = CitationBibliography(joinpath(cdir, "bibliography.bib"))
 
 htmlwriter = Documenter.HTML(
               collapselevel = 2,
-              prettyurls = get(ENV, "CI", nothing) == "true",
-              assets = [asset("assets/logo.ico",class=:ico,islocal=true)]);
+              prettyurls = CIflag,
+              assets = [asset("assets/logo.ico",class=:ico,islocal=true)]
+             );
 
-pages = ["Home"           => "index.md",
-         "Packages" => [ "NURBS Toolbox" => "NURBStoolbox.md", ],
-         "API"      => [ "NURBS Toolbox" => "api_NURBStoolbox.md", ],
-         "Examples" => [ "NURBS Toolbox" => "notebooks/ex_NURBStoolbox.md", ],
-         "References"     => "references.md",
-];
+pages = ["Home"       => "index.md",
+         "Packages"   => [ "NURBS Toolbox" => "NURBStoolbox.md", ],
+         "API"        => [ "NURBS Toolbox" => "api_NURBStoolbox.md", ],
+         "Examples"   => [ "NURBS Toolbox" => "literate/ex_NURBStoolbox.md", ],
+         "References" => "references.md",
+        ];
 
-# TODO: check why the css themes are not equally applied over the whole site
-makedocs(bib,sitename = "MagMechFEM_Matlab2Julia",
+makedocs(bib,
+         sitename = "MagMechFEM_Matlab2Julia",
          authors = "J. A. Duffek",
-         modules=[NURBStoolbox],
+         # TODO update this at the end
+#         modules = [NURBStoolbox]
          format = htmlwriter,
          doctest = false,
          clean = true,
-         pages = pages,
-)
+         pages = pages
+        );
 
-println("documentation at: file:///" * joinpath(@__DIR__,"build/index.html"))
+if CIflag
+  deploydocs(
+      repo = "github.com/LazyScholar/MagMechFEM_Matlab2Julia.git",
+      push_preview = true,
+      forcepush = true,
+      devbranch = "main",
+      branch = "gh-pages"
+     );
+else
+  println("documentation at: file:///" * joinpath(cdir,"build/index.html"));
+end

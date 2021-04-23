@@ -8,8 +8,12 @@
 *.bib.bak
 *.bib.sav
 *.bib.sav.bak
-**/.ipynb_checkpoints
 TAGS
+
+# do not use notebooks in git!
+# convert them to literate format for version control
+*.ipynb
+**/.ipynb_checkpoints
 
 # data files
 *.vtk
@@ -31,11 +35,7 @@ TAGS
 docs/build/
 !docs/src/**/*.png
 !docs/src/**/*.svg
-docs/src/notebooks/**
-
-# do not use notebooks in git!
-# convert them to weave format for version control
-*.ipynb
+docs/src/literate/**
 
 # Julia system images
 *.so

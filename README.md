@@ -1,5 +1,18 @@
 # MagMechFEM_Matlab2Julia
 
+---
+
+| **Documentation**    | [TODO]                                           |
+|----------------------|--------------------------------------------------|
+| **Docs Dev**         | [![docs dev][docs-dev-img]][docs-dev-url]        |
+| **Licence**          | [TODO]                                           |
+
+
+[docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
+[docs-dev-url]: https://lazyscholar.github.io/MagMechFEM_Matlab2Julia/dev
+
+---
+
 ## Description
 
 This project aims to port a FEM research code to Julia. I worked on that specific code as part of my diploma thesis.
@@ -12,7 +25,7 @@ The code is build upon or with the following primary publications which should b
 
 The overview of further sources can be accessed at:
 
-## License
+## Licence
 
 The main parts of this ported code are licensed under ... [TODO]
 For further information see the `LICENSE` files within the module directories.

@@ -158,7 +158,7 @@ democoons()
 plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:svg) # hide
 ```
 
-For further examples see the [NURBS Toolbox notebook](notebooks/ex_NURBStoolbox.md).
+For further examples see the [NURBS Toolbox notebook](literate/ex_NURBStoolbox.md).
 
 ## API
 
