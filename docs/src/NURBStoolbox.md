@@ -39,7 +39,7 @@ I did not port the `igesout` function found in this toolbox as it is not main pa
 ## Examples
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demorect()
@@ -47,7 +47,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 democirc()
@@ -55,7 +55,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demogeom()
@@ -63,7 +63,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demoellip()
@@ -71,7 +71,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 democurve()
@@ -79,7 +79,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demohelix()
@@ -87,7 +87,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 democylind()
@@ -95,7 +95,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demotorus()
@@ -103,7 +103,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demorevolve()
@@ -111,7 +111,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demodegelev()
@@ -119,7 +119,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demodercrv()
@@ -127,7 +127,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demodersrf()
@@ -135,7 +135,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demoruled()
@@ -143,7 +143,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 demo4surf()
@@ -151,7 +151,7 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 ```
 
 ```@example
-using NURBStoolbox; # hide
+using MagMechFEM_Matlab2Julia.NURBStoolbox # hide
 using Plots; # hide
 Plots.pyplot(); # hide
 democoons()

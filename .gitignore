@@ -3,6 +3,7 @@
 *.swp
 *.jl.cov
 *.jl.*.cov
+*.info
 *.jl.mem
 *~
 *.bib.bak

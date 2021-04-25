@@ -1,7 +1,7 @@
 # API: NURBS Toolbox
 
 ```@meta
-CurrentModule = NURBStoolbox
+CurrentModule = MagMechFEM_Matlab2Julia.NURBStoolbox
 ```
 
 ```@contents

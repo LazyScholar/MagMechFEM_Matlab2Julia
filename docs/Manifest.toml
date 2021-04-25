@@ -416,7 +416,7 @@ uuid = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
 version = "0.5.6"
 
 [[MagMechFEM_Matlab2Julia]]
-deps = ["DocStringExtensions", "Documenter", "DocumenterCitations", "Literate", "Plots", "PyPlot", "Revise"]
+deps = ["DocStringExtensions", "Documenter", "DocumenterCitations", "LinearAlgebra", "Literate", "Plots", "PyPlot", "Revise", "Test"]
 path = "/home/johann/DEV/MagMechFEM_Matlab2Julia"
 uuid = "64d22085-0e7b-4436-8072-f3b838d60900"
 version = "0.0.1"
