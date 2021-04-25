@@ -37,7 +37,7 @@ julia> esrf = nrbdegelev(srf,[utimes;vtimes]);
 
 Increase the NURBS surface degree twice along the V direction.
 ```julia
-julia> esrf = nrbdegelev(srf, 0, 2);
+julia> esrf = nrbdegelev(srf,[0;2]);
 ```
 
 # Reference

@@ -8,15 +8,11 @@ tdir = joinpath(cdir,"src","literate");
 
 # add look up paths
 push!(LOAD_PATH, joinpath(cdir, ".."));
-# TODO: delete this later
-push!(LOAD_PATH, joinpath(cdir,"..","src/IGA/nurbs_toolbox"));
-#push!(LOAD_PATH,"../src)
 
 using Test, Documenter, DocumenterCitations;
 using Literate;
 
-# TODO: update this at the end
-using NURBStoolbox;
+using MagMechFEM_Matlab2Julia;
 
 # check if run by CI
 CIflag = get(ENV,"CI","") != "";
@@ -38,7 +34,7 @@ end
 bib = CitationBibliography(joinpath(cdir, "bibliography.bib"))
 
 htmlwriter = Documenter.HTML(
-              collapselevel = 2,
+              collapselevel = 1,
               prettyurls = CIflag,
               assets = [asset("assets/logo.ico",class=:ico,islocal=true)]
              );
@@ -53,8 +49,7 @@ pages = ["Home"       => "index.md",
 makedocs(bib,
          sitename = "MagMechFEM_Matlab2Julia",
          authors = "J. A. Duffek",
-         # TODO update this at the end
-         modules = [NURBStoolbox],
+         modules = [MagMechFEM_Matlab2Julia],
          format = htmlwriter,
          doctest = false,
          clean = true,
