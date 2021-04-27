@@ -29,12 +29,12 @@ along the V direction.
 - `srf`: Ruled NURBS surface.
 
 # Examples:
-```julia
+```julia-repl
 julia> srf = nrbruled(crv1,crv2)
 ```
 
 Construct a ruled surface between a semicircle and a straight line.
-```julia
+```julia-repl
 julia> cir = nrbcirc(1.0,[0.0;0.0;0],0.0,1.0*pi);
 julia> line = nrbline(vec([-1 0.5 1]),vec([1 0.5 1]));
 julia> srf = nrbruled(cir,line);

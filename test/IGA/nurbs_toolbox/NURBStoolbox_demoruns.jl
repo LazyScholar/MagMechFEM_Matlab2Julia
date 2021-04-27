@@ -8,6 +8,8 @@ using MagMechFEM_Matlab2Julia.NURBStoolbox;
 Plots.default(show=false);
 
 # TODO: find a good way to test plot output or plotting in general
+#       (there is a Julia tool to compare plot output with reference images
+#       see: VisualRegressionTests.jl )
 
 @testset "Function: Demos" begin
 

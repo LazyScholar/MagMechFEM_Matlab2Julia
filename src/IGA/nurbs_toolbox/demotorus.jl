@@ -22,7 +22,7 @@ using Plots;
 A second demonstration of surface construction.
 
 # Examples:
-```julia
+```julia-repl
 julia> demotorus()
 ```
 """
@@ -31,10 +31,20 @@ sphere = nrbrevolve(nrbcirc(1.0),[1.0;0.0;0.0]);
 nrbplot(sphere,[20;20],
         title = "Ball and torus - surface construction by revolution.",
         c=:copper,
+        linewidth = 0.5,
+        linecolor = :black,
         cbar=false);
 torus = nrbrevolve(nrbcirc(0.2,[0.9;1.0]),[1.0;0.0;0.0]);
-nrbplot!(torus,[20;10],c=:copper,cbar=false);
-nrbplot!(nrbtform(torus,vectrans([-1.8])),[20;10],c=:copper,cbar=false);
+nrbplot!(torus,[20;10],
+         c=:copper,
+         linewidth = 0.5,
+         linecolor = :black,
+         cbar=false);
+nrbplot!(nrbtform(torus,vectrans([-1.8])),[20;10],
+         c=:copper,
+         linewidth = 0.5,
+         linecolor = :black,
+         cbar=false);
 # TODO: come back later as pyplot backend does not has light/shading yet
 #       furthermore grid lines should be off and interpolated shading should be
 #       on

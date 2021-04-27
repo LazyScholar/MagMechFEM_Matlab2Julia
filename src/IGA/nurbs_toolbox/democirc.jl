@@ -22,7 +22,7 @@ using Plots;
 Demonstration of a circle arcs in the x-y plane.
 
 # Examples:
-```julia
+```julia-repl
 julia> democirc()
 ```
 """

@@ -52,12 +52,12 @@ The orientation of the four NURBS boundary curves.
 - `srf`: Coons NURBS surface patch.
 
 # Examples:
-```julia
+```julia-repl
 julia> srf = nrbcoons(u1, u2, v1, v2)
 ```
 
 Define four NURBS curves and construct a Coons surface patch.
-```julia
+```julia-repl
 julia> pnts = [0.0  3.0  4.5  6.5 8.0 10.0;
                0.0  0.0  0.0  0.0 0.0  0.0;
                2.0  2.0  7.0  4.0 7.0  9.0];

@@ -32,13 +32,13 @@ the vector in the V direction. Note NURBS surfaces cannot be extruded.
 - `srf`: NURBS surface constructed.
 
 # Examples:
-```julia
+```julia-repl
 julia> srf = nrbextrude(crv,vec)
 ```
 
 Form a hollow cylinder by extruding a circle along the z-axis.
 
-```julia
+```julia-repl
 srf = nrbextrude(nrbcirc(),[0.0;0.0;1.0]);
 ```
 """

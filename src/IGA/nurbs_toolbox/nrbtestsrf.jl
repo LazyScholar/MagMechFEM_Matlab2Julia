@@ -23,7 +23,7 @@ Construct a simple test surface.
 - `srf`: NURBS data structure of a surface
 
 # Examples:
-```julia
+```julia-repl
 julia> srf = nrbtestsrf()
 ```
 """

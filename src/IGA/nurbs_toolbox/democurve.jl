@@ -22,7 +22,7 @@ using Plots;
 Shows two simple test curves.
 
 # Examples:
-```julia
+```julia-repl
 julia> democurve()
 ```
 """

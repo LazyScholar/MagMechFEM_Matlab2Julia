@@ -30,7 +30,7 @@ Calculates the B-Spline basis function at `u`.
 - `N`: basis function vector of lenght `p+1`
 
 # Examples:
-```julia
+```julia-repl
 julia> N = basisfun(i,u,p,U)
 ```
 

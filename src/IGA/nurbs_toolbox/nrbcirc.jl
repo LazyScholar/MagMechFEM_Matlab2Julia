@@ -33,7 +33,7 @@ Angles are defined as positive in the anti-clockwise direction.
 - `crv`: NURBS curve for a circular arc.
 
 # Examples:
-```julia
+```julia-repl
 julia> crv = nrbcirc()
 julia> crv = nrbcirc(radius)
 julia> crv = nrbcirc(radius,center)

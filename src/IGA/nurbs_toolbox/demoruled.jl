@@ -22,7 +22,7 @@ using Plots;
 Demonstration of ruled surface construction.
 
 # Examples:
-```julia
+```julia-repl
 julia> demoruled()
 ```
 """
@@ -31,6 +31,8 @@ crv1 = nrbtestcrv();
 crv2 = nrbtform(nrbcirc(4.0,[4.5;0.0],1.0*pi,0.0),vectrans([0.0;4.0;-4.0]));
 srf = nrbruled(crv1,crv2);
 nrbplot(srf,[40;20],
+        linewidth = 0.5,
+        linecolor = :black,
         title = "Ruled surface construction from two NURBS curves.",
         legend = false);
 end # demoruled

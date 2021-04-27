@@ -34,7 +34,7 @@ included the function returns a unit straight line along the x-axis.
 - `crv`: NURBS curve for a straight line.
 
 # Examples:
-```julia
+```julia-repl
 julia> crv = nrbline()
 julia> crv = nrbline(p1,p2)
 ```

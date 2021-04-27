@@ -42,7 +42,7 @@ The position of the corner points
 - `srf`: NURBS bilinear surface, see [`nrbmak`](@ref).
 
 # Examples:
-```julia
+```julia-repl
 julia> srf = nrb4surf(p11,p12,p21,p22)
 ```
 """

@@ -32,14 +32,14 @@ defined by a point and vector.
 - `srf`: Constructed surface.
 
 # Examples:
-```julia
+```julia-repl
 julia> srf = nrbrevolve(crv,vec)
 julia> srf = nrbrevolve(crv,vec,pnt)
 julia> srf = nrbrevolve(crv,vec,pnt,ang)
 ```
 
 Construct a sphere by rotating a semicircle around a x-axis.
-```julia
+```julia-repl
 julia> crv = nrbcirc(1.0,[0.0;0.0;0.0],0.0,pi);
 julia> srf = nrbrevolve(crv,[1.0;0.0;0.0],[0.0;0.0;0.0]);
 julia> nrbplot(srf,[20;20]);

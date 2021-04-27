@@ -63,7 +63,7 @@ Construct a 2D line from `[0.0;0.0]` to `[1.5;3.0]`. For a straight line a
 spline of order 2 is required. Note that the knot sequence has a multiplicity
 of 2 at the start `[0.0;0.0]` and end `[1.0;1.0]` in order to clamp the ends.
 
-```julia
+```julia-repl
 julia> line = nrbmak([0.0 1.5; 0.0 3.0],vec([0.0 0.0 1.0 1.0]))
 ```
 
@@ -80,7 +80,7 @@ Construct a surface in the x-y plane i.e
     |------------------------------------>
                                       U
 
-```julia
+```julia-repl
 julia> coefs = cat([0.0 0.0; 0.0 1.0],[1.0 1.0; 0.0 1.0],dims=3);
 julia> knots = [vec([0.0 0.0 1.0 1.]),vec([0.0 0.0 1.0 1.0])];
 julia> plane = nrbmak(coefs,knots)

@@ -2,7 +2,7 @@
 
 ## Licence
 
-This toolbox is licensed under the GPLv2 licence as stated in the `LICENSE` file in its corresponding directory.
+This toolbox is licensed under the GPLv2 licence as stated in the `LICENSE.md` file in its corresponding directory.
 
 ## Overview
 
@@ -160,6 +160,6 @@ plot!(background_color=:transparent,foreground_color=:grey,html_output_format=:s
 
 For further examples see the [NURBS Toolbox notebook](literate/ex_NURBStoolbox.md).
 
-## API
+## Documentation
 
-The [API reference](api_NURBStoolbox.md) could provide a deeper understanding of the capabilities of the toolbox.
+The [documentation](doc_NURBStoolbox.md) might provide a deeper understanding of the capabilities of the toolbox.

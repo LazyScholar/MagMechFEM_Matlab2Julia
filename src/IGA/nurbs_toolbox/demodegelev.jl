@@ -22,7 +22,7 @@ using Plots;
 Demonstration of the degree elevation algorithm.
 
 # Examples:
-```julia
+```julia-repl
 julia> demodegelev()
 ```
 """

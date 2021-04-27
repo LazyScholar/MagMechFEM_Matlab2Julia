@@ -29,7 +29,7 @@ Find the span of a B-Spline knot vector at a parametric point
 - `s`: knot span of `u` in `U`
 
 # Examples:
-```julia
+```julia-repl
 julia> s = findspan(n,p,u,U)
 ```
 

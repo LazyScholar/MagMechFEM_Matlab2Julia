@@ -30,13 +30,13 @@ function [`bspdegelev`](@ref).
 - `enurbs`: new NURBS structure with degrees elevated
 
 # Examples:
-```julia
+```julia-repl
 julia> ecrv = nrbdegelev(crv,utimes);
 julia> esrf = nrbdegelev(srf,[utimes;vtimes]);
 ```
 
 Increase the NURBS surface degree twice along the V direction.
-```julia
+```julia-repl
 julia> esrf = nrbdegelev(srf,[0;2]);
 ```
 

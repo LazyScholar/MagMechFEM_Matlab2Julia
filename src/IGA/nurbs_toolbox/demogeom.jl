@@ -23,7 +23,7 @@ Demonstration of how to construct a 2D geometric shape from a piece-wise set of
 NURBSs.
 
 # Examples:
-```julia
+```julia-repl
 julia> demogeom()
 ```
 """

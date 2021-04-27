@@ -38,7 +38,7 @@ derivative data structure can be evaluated later with the function
   curve or surface.
 
 # Examples:
-```julia
+```julia-repl
 julia> dnurbs = nrbderiv(nurbs);
 ```
 

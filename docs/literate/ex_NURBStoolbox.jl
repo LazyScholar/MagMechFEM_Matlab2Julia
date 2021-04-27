@@ -26,7 +26,9 @@ default(background_color=:transparent, #hide #md
 # will accept inputs for surfaces or curves.
 
 line = nrbmak([0.0 1.5; 0.0 3.0],vec([0.0 0.0 1.0 1.0]))
+
 #------------------------------------------------------------------------------
+#
 coefs = cat([0.0 0.0; 0.0 1.0],[1.0 1.0; 0.0 1.0],dims=3);
 knots = [vec([0.0 0.0 1.0 1.]),vec([0.0 0.0 1.0 1.0])];
 plane = nrbmak(coefs,knots)
@@ -96,8 +98,8 @@ plot!(crv.coefs[1,:],crv.coefs[2,:],
 
 # ## Surfaces
 #
-# The creation of NURBS surfaces is done similarly to the curves.
-# The input for `nrbmak` with the difference that the points are defined with a
+# The creation of NURBS surfaces is done similarly to curves.
+# The input for `nrbmak` has the difference that the points are defined with a
 # 3D Array.
 # The first and second dimension are used equally to the curve for U-direction
 # and the third dimension stores the points in V direction.
@@ -118,6 +120,8 @@ p2 = nrbeval(srf,[collect(range(0,1,length=20)),
 Plots.pyplot();
 plot(p2[1,:,:],p2[2,:,:],p2[3,:,:],c = :jet,
      st=:surface,
+     linewidth = 0.5,
+     linecolor = :grey,
      legend = nothing,
      camera=[-30,30])
 plot!(srf.coefs[1,:,:],srf.coefs[2,:,:],srf.coefs[3,:,:],
