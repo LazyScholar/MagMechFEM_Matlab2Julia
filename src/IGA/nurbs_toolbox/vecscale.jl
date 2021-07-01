@@ -36,14 +36,14 @@ The matrix is:
 - `st`: Scaling Transformation Matrix
 
 # Examples:
-```julia
+```julia-repl
 julia> ss = vecscale(svec)
 ```
 
 Scale up the NURBS line `[0.0;0.0;0.0]` - `[1.0;1.0;1.0]` by 3 along the
 x-axis, 2 along the y-axis and 4 along the z-axis.
 
-```julia
+```julia-repl
 julia> line = nrbline(vec([0.0 0.0 0.0]),vec([1.0 1.0 1.0]));
 julia> scale = vecscale(vec([3.0 2.0 4.0]));
 julia> sline = nrbtform(line, scale)

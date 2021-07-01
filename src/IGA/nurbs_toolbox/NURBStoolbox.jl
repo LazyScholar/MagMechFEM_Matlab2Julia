@@ -14,15 +14,14 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-using DocStringExtensions;
-
 """
     NURBStoolbox
 
 NURBS Toolbox module ported from the Matlab NURBS toolbox of [2000Spink](@cite)
-(can currently be found on Mathworks FileExchange[^1]). The Matlab package dates
-approximately back to the year 2000. Newer versions are written for Octave and
-are hosted as Octave Community package[^2] (those might be compatible with Matlab).
+(can currently be found on Mathworks FileExchange[^1]). The Matlab package
+dates approximately back to the year 2000. Newer versions are written for
+Octave and are hosted as Octave Community package[^2] (those might be
+compatible with Matlab).
 
 This package is licensed under GNU General Puplic License version 2.
 
@@ -36,6 +35,9 @@ $(DocStringExtensions.EXPORTS)
 $(DocStringExtensions.IMPORTS)
 """
 module NURBStoolbox
+
+using DocStringExtensions;
+
 # deg2rad: is a julia build in function therefore omitted
 # rad2deg: is a julia build in function therefore omitted
 # igesout: is a not necessary third party functions with uncertain licence
@@ -56,17 +58,17 @@ include("nrbplot.jl");
 
 # Utility and modification functions/methods
 export findspan;
-include("findspan.jl")
+include("findspan.jl");
 export vecscale;
-include("vecscale.jl")
+include("vecscale.jl");
 export vectrans;
-include("vectrans.jl")
+include("vectrans.jl");
 export vecrotx;
-include("vecrotx.jl")
+include("vecrotx.jl");
 export vecroty;
-include("vecroty.jl")
+include("vecroty.jl");
 export vecrotz;
-include("vecrotz.jl")
+include("vecrotz.jl");
 export nrbtform;
 include("nrbtform.jl");
 export nrbextrude;
@@ -81,7 +83,7 @@ export vecmag;
 include("vecmag.jl");
 export vecmag2;
 include("vecmag2.jl");
-export vecnorm_toolbox
+export vecnorm_toolbox;
 include("vecnorm_toolbox.jl");
 export vecangle;
 include("vecangle.jl");
@@ -159,6 +161,5 @@ export democoons;
 include("democoons.jl");
 export demogeom;
 include("demogeom.jl");
-
 
 end # NURBStoolbox

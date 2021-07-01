@@ -35,14 +35,14 @@ Plot a NURBS curve or a surface.
     arguments compatible with that backend.
 
 # Examples:
-```julia
+```julia-repl
 julia> nrbplot(nrb,subd)
 julia> nrbplot(nrb,subd,c=:winter)
 ```
 
 Plot the test surface with 20 points along the U direction and 30 along the V
 direction
-```julia
+```julia-repl
 julia> nrbplot(nrbtestsrf,[20;30],c=:copper)
 ```
 

@@ -22,13 +22,15 @@ using Plots;
 Demonstration of the construction of a cylinder.
 
 # Examples:
-```julia
+```julia-repl
 julia> democylind()
 ```
 """
 function democylind()
 srf = nrbcylind(3.0,1.0,[0.0;0.0;0.0],deg2rad(270),deg2rad(180));
 nrbplot(srf,[20;20],
+        linewidth = 0.5,
+        linecolor = :black,
         title = "Cylindrical section by extrusion of a circular arc.",
         legend = false);
 end # democylind

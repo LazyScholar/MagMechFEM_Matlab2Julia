@@ -32,12 +32,12 @@ Normalises the array of vectors, returning the unit vectors.
 - `nvec`: Normalised vectors, matrix the same size as `vec`.
 
 # Examples:
-```julia
+```julia-repl
 julia> nvec = vecnorm_toolbox(vec)
 ```
 
 Normalise the two vectors `[0.0;2.0;1.3]` and `[1.5;3.4;2.3]`.
-```julia
+```julia-repl
 julia> nvec = vecnorm_toolbox([0.0 1.5; 2.0 3.4; 1.3 2.3])
 ```
 """

@@ -22,7 +22,7 @@ using Plots;
 Demonstration of surface construction by revolving a profile curve.
 
 # Examples:
-```julia
+```julia-repl
 julia> demorevolve()
 ```
 """
@@ -51,6 +51,8 @@ plot(p[1,:,:], p[2,:,:], p[3,:,:],
      legend = false,
      camera = (-30, 30),
      title = "Construct of a 3D surface by revolution of a curve.",
+     linewidth = 0.5,
+     linecolor = :black,
      c=:copper);
 # TODO: come back later as pyplot backend does not has light/shading yet
 #       furthermore grid lines should be off and interpolated shading should be

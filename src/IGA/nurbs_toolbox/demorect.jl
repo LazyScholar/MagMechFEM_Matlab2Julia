@@ -22,7 +22,7 @@ using Plots;
 Demonstrate of rectangluar curve.
 
 # Examples:
-```julia
+```julia-repl
 julia> demorect()
 ```
 """

@@ -23,7 +23,7 @@ Demonstrates the construction of a general curve and determine of the
 derivative.
 
 # Examples:
-```julia
+```julia-repl
 julia> demodercrv()
 ```
 """

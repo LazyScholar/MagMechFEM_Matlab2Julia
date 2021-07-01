@@ -22,7 +22,7 @@ using Plots;
 Demonstration of a 3D straight line
 
 # Examples:
-```julia
+```julia-repl
 julia> demoline()
 ```
 """

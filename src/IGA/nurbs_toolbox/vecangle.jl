@@ -36,12 +36,12 @@ the range `0` to `2*π`.
 - `ang`: Arctangents, row vector of angles.
 
 # Examples:
-```julia
+```julia-repl
 julia> ang = vecmag2(num,dum)
 ```
 
 Find the `atan(1.2,2.0)` and `atan(1.5,3.4)` using `vecangle`.
-```julia
+```julia-repl
 julia> ang = vecangle([1.2 1.5], [2.0 3.4])
 ```
 """

@@ -28,7 +28,7 @@ surface.
 - `rnurbs`: The transformed NURBS data structure.
 
 # Examples:
-```julia
+```julia-repl
 julia> rnurbs = nrbreverse(nurbs)
 ```
 """

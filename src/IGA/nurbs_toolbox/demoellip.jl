@@ -23,7 +23,7 @@ Demonstration of a unit circle transformed to a inclined ellipse by first
 scaling, then rotating and finally translating.
 
 # Examples:
-```julia
+```julia-repl
 julia> demoellip()
 ```
 """

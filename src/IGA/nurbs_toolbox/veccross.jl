@@ -35,7 +35,7 @@ Determines cross product of two vectors.
   product of the respective components in `vec1` and `vec2`.
 
 # Examples:
-```julia
+```julia-repl
 julia> cross = veccross(vec2,vec2)
 ```
 Determine the cross product of
@@ -43,7 +43,7 @@ Determine the cross product of
     [2.3;3.4;5.6] and [1.2;4.5;1.2]
     [5.1;0.0;2.3] and [2.5;3.2;4.0]
 
-```julia
+```julia-repl
 julia> cross=veccross([2.3 5.1; 3.4 0.0; 5.6 2.3],[1.2 2.5; 4.5 3.2; 1.2 4.0])
 ```
 """

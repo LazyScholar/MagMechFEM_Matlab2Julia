@@ -32,7 +32,7 @@ Construct a cylinder or cylindrical patch by extruding a circular arc (see
 - `srf`: NURBS surface of a extruded circular arc.
 
 # Examples:
-```julia
+```julia-repl
 julia> crv = nrbcylind()
 julia> crv = nrbcylind(height,radius)
 julia> crv = nrbcylind(height,radius)

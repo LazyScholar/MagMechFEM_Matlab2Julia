@@ -22,7 +22,7 @@ using Plots;
 Demonstration of a bilinear surface.
 
 # Examples:
-```julia
+```julia-repl
 julia> demo4surf()
 ```
 """

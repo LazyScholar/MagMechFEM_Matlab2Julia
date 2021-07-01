@@ -23,7 +23,7 @@ Construct a simple test curve.
 - `crv` NURBS data structure of a curve
 
 # Examples:
-```julia
+```julia-repl
 julia> crv = nrbtestcrv()
 ```
 """

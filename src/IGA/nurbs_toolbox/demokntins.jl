@@ -22,7 +22,7 @@ using Plots;
 Demonstration of the knot insertion algorithm.
 
 # Examples:
-```julia
+```julia-repl
 julia> demokntins()
 ```
 """

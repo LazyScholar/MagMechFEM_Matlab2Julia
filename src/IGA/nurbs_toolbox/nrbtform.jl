@@ -35,13 +35,13 @@ matrix can be simple constructed by the functions [`vecscale`](@ref),
 - `tnurbs`: The transformed NURBS data structure.
 
 # Examples:
-```julia
+```julia-repl
 julia> tnurbs = nrbtform(nurbs,tmatrix)
 ```
 
 Rotate a square by 45 degrees about the z axis.
 
-```julia
+```julia-repl
 julia> rsqr = nrbtform(nrbrect(), vecrotz(deg2rad(45)));
 julia> nrbplot(rsqr,[10;10])
 ```

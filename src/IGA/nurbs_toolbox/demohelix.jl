@@ -22,7 +22,7 @@ using Plots;
 Demonstration of a 3D helical curve.
 
 # Examples:
-```julia
+```julia-repl
 julia> demohelix()
 ```
 """

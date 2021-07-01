@@ -43,14 +43,14 @@ function [`bspeval`](@ref).
   (see above).
 
 # Examples:
-```julia
+```julia-repl
 julia> p = nrbeval(nurbs,tt)
 julia> p,w = nrbeval(nurbs,tt,:homogeneous)
 julia> p = nrbeval(srf,[ut,vt])
 ```
 
 Evaluate the NURBS circle with twenty points from 0.0 to 1.0.
-```julia
+```julia-repl
 julia> nrb = nrbcirc();
 julia> ut = collect(range(0.0,stop=1.0,length=20))
 julia> p = nrbeval(nrb,ut)

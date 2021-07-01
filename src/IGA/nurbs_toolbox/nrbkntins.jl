@@ -36,7 +36,7 @@ the B-Spline function [`bspkntins`](@ref).
 - `enurbs`: new NURBS structure with degrees elevated
 
 # Examples:
-```julia
+```julia-repl
 julia> icrv = nrbkntins(crv,iknots);
 julia> isrf = nrbkntins(srf,[iuknots,ivknots]);
 ```
@@ -45,13 +45,13 @@ julia> isrf = nrbkntins(srf,[iuknots,ivknots]);
     No knot multiplicity will be increased beyond the order of the spline.
 
 Insert two knots into a curve, one at 0.3 and another twice at 0.4.
-```julia
+```julia-repl
 julia> icrv = nrbkntins(crv, vec([0.3 0.4 0.4]))
 ```
 
 Insert into a surface two knots as (1) into the U knot sequence and one knot
 into the V knot sequence at 0.5.
-```julia
+```julia-repl
 julia> isrf = nrbkntins(srf, [vec([0.3 0.4 0.4]),[0.5]])
 ```
 

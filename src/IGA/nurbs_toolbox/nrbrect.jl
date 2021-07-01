@@ -40,7 +40,7 @@ square.
 - `crv`: NURBS curve for a straight line.
 
 # Examples:
-```julia
+```julia-repl
 julia> crv = nrbrect()
 julia> crv = nrbrect(size)
 julia> crv = nrbrect(width, height)

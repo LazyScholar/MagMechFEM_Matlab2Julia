@@ -22,7 +22,7 @@ using Plots;
 Construction of a bilinearly blended Coons surface.
 
 # Examples:
-```julia
+```julia-repl
 julia> democoons()
 ```
 """

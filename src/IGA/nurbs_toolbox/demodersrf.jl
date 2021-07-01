@@ -22,7 +22,7 @@ using Plots;
 Demonstrates the construction of a general surface derivatives.
 
 # Examples:
-```julia
+```julia-repl
 julia> demodersrf()
 ```
 """

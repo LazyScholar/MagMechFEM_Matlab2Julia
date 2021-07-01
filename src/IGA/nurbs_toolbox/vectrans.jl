@@ -36,14 +36,14 @@ The matrix is:
 - `st`: Translation Transformation Matrix
 
 # Examples:
-```julia
+```julia-repl
 julia> st = vectrans(tvec)
 ```
 
 Translate the NURBS line `[0.0;0.0;0.0]` - `[1.0;1.0;1.0]` by 3 along the
 x-axis, 2 along the y-axis and 4 along the z-axis.
 
-```julia
+```julia-repl
 julia> line = nrbline(vec([0.0 0.0 0.0]),vec([1.0 1.0 1.0]));
 julia> trans = vectrans(vec([3.0 2.0 4.0]));
 julia> tline = nrbtform(line, trans);

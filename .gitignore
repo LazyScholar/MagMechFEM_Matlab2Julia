@@ -50,3 +50,10 @@ docs/src/literate/**
 
 # ported material models are private
 src/InitialConditions/**
+src/Material/**
+
+# there shall be only one manifest for now
+docs/Manifest.toml
+
+# julia test functions in the main directory
+/*.jl

@@ -36,14 +36,14 @@ The matrix is:
 - `ry`: (4x4) Transformation matrix.
 
 # Examples:
-```julia
+```julia-repl
 julia> ry = vecroty(angle)
 ```
 
 Rotate the NURBS line `[0.0;0.0;0.0]` - `[3.0;3.0;3.0]` by 45 degrees around
 the y-axis
 
-```julia
+```julia-repl
 julia> line = nrbline(vec([0.0 0.0 0.0]),vec([3.0 3.0 3.0]));
 julia> rotate = vecroty(pi/4);
 julia> rline = nrbtform(line, rotate)

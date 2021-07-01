@@ -31,7 +31,7 @@ B-Spline.
 - `dk`: Knot sequence of the derivative.
 
 # Examples:
-```julia
+```julia-repl
 julia> dc,dk = bspderiv(d,c,k)
 ```
 

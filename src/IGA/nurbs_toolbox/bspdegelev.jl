@@ -31,7 +31,7 @@ Degree elevate a univariate B-Spline.
 - `ik`: Knot vector of the new B-Spline.
 
 # Examples:
-```julia
+```julia-repl
 julia> ic,ik = bspdegelev(d,c,k,t)
 ```
 
@@ -292,7 +292,7 @@ Computes the binomial coefficient.
 - `b`: binomial coefficient of `n` choose `k`
 
 # Example:
-```julia
+```julia-repl
 julia> b = bincoeff(n,k)
 ```
 
@@ -311,7 +311,7 @@ end # bincoeff
 Computes `ln(n!)`.
 
 # Example:
-```julia
+```julia-repl
 julia> a = factln(n)
 ```
 """

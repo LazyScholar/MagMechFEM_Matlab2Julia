@@ -31,7 +31,7 @@ Insert knots into a univariate B-Spline.
 - `ik`: Knot vector of the new B-Spline, of size `(nk+nu)`.
 
 # Examples:
-```julia
+```julia-repl
 julia> ic,ik = bspkntins(d,c,k,u)
 ```
 

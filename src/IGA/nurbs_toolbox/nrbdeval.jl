@@ -34,13 +34,13 @@ Evaluation of the derivative NURBS curve or surface.
   (Jacobian).
 
 # Examples:
-```julia
+```julia-repl
 julia> pnt, jac = nrbdeval(nurbs, dnurbs, tt)
 julia> pnt, jac = nrbdeval(nurbs, dnurbs, [tu,tv])
 ```
 
 Determine the first derivatives a NURBS curve at 9 points for 0.0 to 1.0.
-```julia
+```julia-repl
 julia> tt = collect(range(0.0, 1.0, length=9));
 julia> dcrv = nrbderiv(crv);
 julia> pnts, jac = nrbdeval(crv, dcrv, tt)

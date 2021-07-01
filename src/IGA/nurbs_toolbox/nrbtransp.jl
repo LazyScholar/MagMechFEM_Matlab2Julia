@@ -30,7 +30,7 @@ directions. NURBS curves cannot be transposed.
 - `tsrf`: NURBS surface with U and V diretions transposed.
 
 # Examples:
-```julia
+```julia-repl
 julia> tsrf = nrbtransp(srf)
 ```
 """

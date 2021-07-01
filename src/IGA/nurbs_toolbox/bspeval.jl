@@ -30,7 +30,7 @@ Evaluate a univariate B-Spline.
 - `p`: Evaluated points, matrix of size `(dim,nu)`
 
 # Examples:
-```julia
+```julia-repl
 julia> p = bspeval(d,c,k,u)
 ```
 

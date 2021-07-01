@@ -1,11 +1,11 @@
-# API: NURBS Toolbox
+# Documentation: NURBS Toolbox
 
 ```@meta
 CurrentModule = MagMechFEM_Matlab2Julia.NURBStoolbox
 ```
 
 ```@contents
-Pages = ["api_NURBStoolbox.md"]
+Pages = ["doc_NURBStoolbox.md"]
 Depth = 2
 ```
 
@@ -143,4 +143,5 @@ factln
 ## Index
 
 ```@index
+Pages = ["doc_NURBStoolbox.md"]
 ```
